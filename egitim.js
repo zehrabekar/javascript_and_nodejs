@@ -55,8 +55,10 @@ console.log(1)
 console.log(1)
 console.log(1)
 console.timeEnd("id")
+console.clear()
 // time ve timeEnd (ikisinde de id yazıyor) arasında yazılanların kaç saniyede çalıştırıldığı gösterilir
 
+/*
 alert("merhaba")//tarayıcı açıldığında küçük pencerede merhaba mesajı çıkar
 
 let sayii=60
@@ -65,5 +67,77 @@ alert(sayii) //  açılan küçük ekranda sayii değişkeninin değerini göste
 prompt("bir sayı giriniz") //tarayıcı açıldığında gelen küçük pencere ile kullanıcıdan veri alırken kullanılır. buraya girilen değer nereye gidiyor bilmiyoruz
 
 let girilenDeger = prompt("bir sayı giriniz") 
-console.log(girilenDeger)
+console.log(girilenDeger)*/
 //girdiğimiz değer girilenDeger adlı değişkene aktarılır ve console.log ile o değeri console kısmında görebiliriz.
+
+//veri tipleri
+let sayi=89;
+console.log(sayi)
+console.log(typeof sayi) // typeof ile verinin türünü öğreniriz
+
+let ondalikSayi = 2.35;
+console.log(ondalikSayi)
+console.log(typeof ondalikSayi) 
+
+let negatifSayi = -25
+console.log(negatifSayi)
+console.log(typeof negatifSayi)
+//negatif, ondalık, pozitif farketmeksizin hepsinin türü number.
+
+let isim = "zehra"
+let soyisim = 'bekar'
+console.log(isim)
+console.log(typeof isim)
+
+let tamisim = isim + ' ' + soyisim //boşluk için tırnak arasına boşluk koy
+console.log(tamisim)
+
+//template literal - backtick
+let tamisim2 = `${isim} ${soyisim}` // alt gr + virgüle basarak yan tırnakları yaptık
+console.log("template literal : " + tamisim2)
+console.log(`template literal ile yazdır : ${tamisim2}`)
+
+let cumle = 'zehra\'nın bilgisayarı' //tek tırnak içinde kesme işareti kullanabilmek için işaretten önce \ kullanmak gerekir.
+let cumle2 = "zehra'nın bilgisayarı"
+console.log(cumle)
+console.log(cumle2)
+
+let asalSayiMi = true;
+console.log("veri türümüzün değeri : " + asalSayiMi + " veri tipi : " + typeof asalSayiMi)
+console.log(`veri türümüzün değeri ${asalSayiMi} veri tipi : ${typeof asalSayiMi}` ); // template literal ile
+
+let renk;
+console.log(renk)//çıktı olarak undefined geldi, yani değişken tanımlanmış ama değer verilmemiş
+console.log(typeof renk)// veri tipi undefined 
+renk ="sarı" 
+console.log(renk)
+console.log(typeof renk)//string
+
+let yas1 = null ;
+console.log("değer :" + yas1 + " veri tipi :" + typeof yas1) // veri tipi object olarak göründü fakar null primitive tiptir referans tip değildir
+//null boş değer demektir.
+
+// bunların dışında kalanlar referans veri tipidir(object, array, ...)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
