@@ -119,14 +119,87 @@ console.log("değer :" + yas1 + " veri tipi :" + typeof yas1) // veri tipi objec
 
 // bunların dışında kalanlar referans veri tipidir(object, array, ...)
 
+//aritmetik operatörler + - * / %
+let sayi5 = 10
+let sayi6 = 10
+
+let sonuc = sayi5 + sayi6
+sonuc = sayi5 - sayi6
+sonuc = sayi5 * sayi6
+sonuc = sayi5 / sayi6
+console.log(sonuc)
+
+// % mod demektir, bölümünden kalanı gösterir
+sonuc = sayi5 % sayi6
+console.log(sonuc)
+
+let isim1 = "zehra"
+let soyisim1 = 'bekar'
+let tamisimm = isim1 - soyisim1
+console.log(tamisimm) // sonuç olarak NaN geldi. bu not a number demektir
+
+// string ifadelerde operatörlerden sadece + kullanmak işe yarar diğerlerinin bir önemi yoktur
+
+let yas3 = 30
+let metinOlarakYas = '30'
+console.log(yas3+100)// çıktı = 130
+console.log(metinOlarakYas+100) // çıktı= 30100, toplama işlemi yapmadı çünkü '30' string bir ifade
+
+console.log(metinOlarakYas - 10) // cevap = 20
+console.log(metinOlarakYas * 10)// cevap = 300
+console.log(metinOlarakYas / 10)// cevap = 3
+console.clear()
+// - * / de '30' string bir ifade olmasına rağmen + dan farklı olarak '30'u number çevirip matematiksel işlem yaptı 
+
+// arttırma-azaltma operatörleri
+sayi = sayi + 1
+console.log(sayi) //çıktı = 90
+// sayi++ = (sayi = sayi + 1)
+sayi++ // sayi+1
+sayi-- // sayi-1  
+
+sayi++; // önce sayıyı kullan sonra sayiyi 1 arttır
+++sayi; //  önce sayiyi 1 arttır sonra sayıyı kullan
+--sayi; //  önce sayiyi 1 azalt sonra sayıyı kullan
+sayi--; // önce sayıyı kullan sonra sayiyi 1 azalt
+
+console.log( "Sayı :" + sayi)// sonuç 90
+console.log( "Sayı :" + sayi++) // yine 90 önce sayıyı kullandı sonra , 
+console.log(sayi)// sayiya bir ekledi sayinin değeri 91 oldu
+console.log("Sayı :" +  (++sayi)) //91 değerinin üzerine önce bir ekledi sonra sayıyı kullandı sonuç 92
 
 
+/* Aritmetik ortalama operatörleri:
++= -= *= /= %= */
+let sayim = 10;
+let sayim1 = 4;
+sayim1 += sayim // sayim1 = sayim1 + sayim
+console.log(sayim1) //14
+sayim1 -= sayim // sayim1 = sayim1 - sayim
+console.log(sayim1) //sayim1'in değeri önceki şlemle 14 olmuştu. 14-sayim(10)= 4 
 
+//karşılaştırma operatörleri
+console.log(sayim1 > sayim) // false
+console.log(sayim1 < sayim) // true
+console.log(sayim1 <= sayim) // true
+console.log(sayim1 >= sayim) // false
+console.log(sayim1 != sayim) // true (eşit değil midir? değildir)
+console.log(sayim1 == sayim) // false (eşit midir? değildir)
+console.clear()
 
+let kalem = 30
+let metinOlarakKalemAdedi = '30'
 
+console.log(kalem == metinOlarakKalemAdedi) // true dedi. normalde biri string biri number fakat çift eşittirde karşılaştırma işlemi sadece değerlere bakarak yapılır veri tiplerine göre yapılmaz
+console.log(kalem === metinOlarakKalemAdedi) // cevap false çünkü veri tipleri farklı
+console.log(kalem !== metinOlarakKalemAdedi)// true . eşit değil mi? değil
 
+// mantıksal operatörler ve, veya
+console.log((sayim > 5 ) && (sayim1 <10)) //true
+console.log((sayim < 5 ) || (sayim1 <10)) //true
 
-
+let sonucc = 4*2/4-1*5; // işlem önceliği
+console.log(sonucc) // -3
 
 
 
