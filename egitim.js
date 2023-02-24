@@ -201,8 +201,29 @@ console.log((sayim < 5 ) || (sayim1 <10)) //true
 let sonucc = 4*2/4-1*5; // işlem önceliği
 console.log(sonucc) // -3
 
+//ödev soruları çözümleri
+//1.ödev 
+let saniye = 130
+console.log( "130 saniye :" + saniye/60 +  ' '+  "dakika" + ' ' + saniye%60 + ' '+ "saniye") 
 
+let saniyeString = prompt("saniye değeri giriniz","130") //buradaki 100 varsayılan değerdir, kullanıcı değer girmezse 100 kabul edilir
+//prompt ile girilen değerler string olarak kabul dildiğinden number yapıyoruz
+let saniyee = parseInt(saniyeString)
 
+let dakika = parseInt((saniyee/60),10) //buradaki 10 dakikanın küsürrlü yazılmaması için sayının onluk sisteme göre yazılmasını sağlar
+let kalanSaniye = saniyee % 60
+
+console.log(typeof saniyee)
+console.log( `Girdiğiniz ${saniyee} değeri : ${dakika} dakika ve ${kalanSaniye} saniyedir`);
+
+//2.ödev
+let fahrenheit = 100
+let celcius = 5/9 * (fahrenheit - 32)
+console.log(fahrenheit +' '+ "fahrenheit" + ' '+ celcius.toFixed(2)+ ' '+ "celcius"+ ' '+ "derecedir") // normalde 37.77777777777778 değerini verdi. noktadan sonra iki basamak olması için toFixed(2) yazdık ve 37.78 değerini verdi
+
+//3.ödev
+let artikYilMi = 2088
+console.log((artikYilMi%400==0) || (artikYilMi%4==0) && (artikYilMi%100==0))
 
 
 
