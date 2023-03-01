@@ -137,17 +137,17 @@ else {
     console.log( "bu false ifadedir");
 }
 // sonuc olarak : bu true ifadedir yazdı. içinde FALSE, 0 , "" , null , undefined, NaN harici şeyler yazdığı zaman true olur.
+
 if (false) {
     console.log( "bu true ifadedir");
 }
 else {
     console.log( "bu false ifadedir");
 }
-//bu false ifadedir çıktı. false yerine true yazınca bu true ifadedir yazdı
+//çıktı : bu false ifadedir. değişken olarak false yerine true yazınca bu true ifadedir yazdı
 
 let kitap = 15;
 kitap = 0;
-
 if (kitap) {
     console.log("true ifade")
 }
@@ -157,7 +157,6 @@ else {
 // değer olarak 0 verdiğimiz için false ifade çıktısını verdi
 
 let hacer="melike"
-
 if (hacer) {
     console.log("true ifade")
 }
@@ -168,9 +167,7 @@ console.clear()
 // true ifade.hacer değişkeninde herhangi bir veri var mı? var (falsey yapanlar harici) o zaman true ifadedir çıktısını verir.
 // melike değeri yerine ( '', null , undefined ) verseydik false ifade çıktısını verirdi.
 
-//NaN
 let dogumSene = 2001;
-
 if (dogumSene) {
     console.log("true ifade")
 }
@@ -181,7 +178,6 @@ else {
 
 let dogumSenee = 2001;
 dogumSenee="ben"
-
 if (dogumSenee) {
     console.log("true ifade")
 }
@@ -192,25 +188,24 @@ else {
 
 let dogumSenem = 2001;
 dogumSenem="ben"
-
 if (dogumSenem + 99) {
     console.log("true ifade")
 }
 else {
     console.log("false ifade")
 }
-/* true ifade . stringlerde + birleştirme demektir ben99 haline getirdi ve yine string bir ifade olduğundan hata almadık fakat *99 yaptığımızda NaN olacağından false
+/* true ifade . stringlerde + birleştirme demektir . ben99 haline getirdi ve yine string bir ifade olduğundan hata almadık fakat *99 yaptığımızda NaN olacağından false
 sonucunu alacağız*/
 
 let dogumSenemm = 2001;
 dogumSenemm="ben"
-
 if (dogumSenemm * 99) {
     console.log("true ifade")
 }
 else {
     console.log("false ifade")
 }
+// false ifadedir sonucu çıktı
 
 
 
