@@ -236,3 +236,4 @@ console.log((artikYilMi%400==0) || (artikYilMi%4==0) && (artikYilMi%100==0))
 
 
 
+
