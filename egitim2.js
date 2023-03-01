@@ -67,6 +67,51 @@ console.log("c'nin yeni değeri :" +c)
 /* buradaki ?'nin anlamı : "eğer a b'en büyük ise" cümlesindeki ise'nin karşılığıdır
 : 'nın anlamı ise else'e karşılık gelir. */
 
+//---------------------------------------------------------------------------------------
 
+// switch-case
+/*
+let haftaninKacinciGunu = 3;
 
+if (haftaninKacinciGunu ===1) {
+    console.log("pazartesi")
 
+} else if (haftaninKacinciGunu === 2) {
+    console.log("salı")
+
+}else if (haftaninKacinciGunu === 3) {
+    console.log("çarşamba")
+
+}else if (haftaninKacinciGunu === 4) {
+        console.log("perşembe")
+
+}else if (haftaninKacinciGunu === 5) {
+            console.log("cuma")
+
+}else if (haftaninKacinciGunu === 6) {
+    console.log("cumartesi")
+
+} else (haftaninKacinciGunu === 7) {
+    console.log("pazar")}
+ ard arda if else kullanak yerine switch-case kullanmak daha okunaklı*/
+
+ let  haftaninKacinciGunuu = 7;
+
+ switch(haftaninKacinciGunuu) {
+    case 1 : console.log("pazartesi") ;break;
+    case 2 : console.log("salı"); break;
+    case 3 : console.log("çarşamba"); break;
+    case 4 : console.log("perşembe") ;break;
+    case 5 : console.log("cuma"); break;
+    case 6 : console.log("cumartesi"); break;
+    case 7 : console.log("pazar"); break;
+    default : console.log ("geçersiz değer girdiniz"); break;
+ }
+ console.log("switch'den çıkıldı");
+/*
+-switch yazdıktan sonra bakılacak değişkeni yazıyoruz (haftaninKacinciGunuu).
+-her caseden sonra break koymazsak değer case 1de karşılansa dahi diğer değerleri bitene kadar yazdırmaya devam eder.
+-default değeri değişkene verilen değerin karşılığı yoksa çalışır (mesela 10 yazarsak).
+-değişkenin değerine göre çalışan caseden sonra break çalışınca switchden çıkılır (bunu göstermek için
+console.log("switch'den çıkıldı"); yazdık ) 
+*/
