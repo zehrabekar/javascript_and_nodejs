@@ -206,7 +206,7 @@ else {
     console.log("false ifade")
 }
 // false ifadedir sonucu çıktı
-
+console.clear();
 
 
 
