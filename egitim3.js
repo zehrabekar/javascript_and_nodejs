@@ -24,10 +24,12 @@
 /* burada for döngüsü parantezi ile süslü parantez arasına ; koyarsak döngü ve çıktı birbirinden bağımsız olur 
 ve çıktılar döngü şartına göre ekrana yazılmaz direkt bir kez yazılır. 
 yanlış ifade : 
+--------------------------
  for(let i=0, j=0; (i+j) < 20 ; i=i+5, j=j+2) ; {
     console.log("döngü çalıştı") 
     console.log("i değeri:" +i+ " j değeri:" + j)
  }
+--------------------------
 
  /*
 sonsuz döngü :
@@ -35,7 +37,77 @@ for (; ;) {
 
 }
 */ 
+
 // tekrar sayısı belli olan durumlarda for döngüsü kullanırız
-// i değişkenini birden fazla kez tanımlayabiliyoruz çünkü tanımlanan i değişkeni o for döngüsü içindir
+// i değişkenini birden fazla kez tanımlayabiliyoruz çünkü tanımlanan i değişkeni o for döngüsü içindir. Döngü içinde tanımlanan değişken döngü dışında kullanılamaz.
+
+/* döngü dışında tanımlanan değşken döngü içinde kullanılabilir
+let j = 2;
+ for(j=0 ; j<6; j++)
+ console.log("zehra") */
+
+//while döngüsü
+let say = 5
+while (say < 15) {
+   console.log(" while döngüsü çalıştı")
+   say++
+}
+/* say++ yazmazsak sonsuza kadar çalışıyor
+şart doğruysa çalışır*/
+
+//do-while döngüsü
+let yasimm =22
+do {
+   console.log("do-while döngüsü")
+} while(yasimm > 30);
+/*do-while döngüsünü noktalı virgülle bitirmek zorundayız
+do-while döngüsündeki şart sağlanmasa bile döngü bir kez çalıştırılır. mesela burada yasimm değişkeni 30dan büyük olmadığı halde ekrana bir kez  "do-while döngüsü" yazdırıldı*/
+let yasiimm =22
+do {
+   console.log("do-while döngüsü")
+   yasiimm++
+} while(yasiimm < 30);
+
+/* tekrar eden kodun kaç kere çalışacağını biliyorsak for döngüsünü,
+döngüdeki şart sağlandığı sürece kodun çalışması için while döngüsünü,
+bir kod önce çalışsın sonra şartı kontrol edilsin istiyorsak do-while döngüsünü kullanacağız. */
+
+//break
+for(let i=0; i<20 ; i++) {
+   if (i==12) {
+      break;
+   }
+   console.log("break kullanımı")
+}
+/* break komutu döngünün çalışmasını durdurur. buraad i değişkeninin 20den küçük olduğu durumlarda çalışması fakat i değişkeni 12ye eşit olduğunda döngünün durması istenmiş.
+değişken 1 artarak 12 olduğunda döngü çalışmaı bırakmıs ve ekrana 12 kez break kullanımı yazdırılmıştır*/
+
+//continue 
+for(let i=10; i<30 ; i++) {
+   if (i==15) {
+      continue 
+   }
+   console.log(" continue kullanımı"+ i)
+}
+/* çıktı olarak 10dan 29 a kadar continue kullanımı + i değerini yazdı fakat continue kullanımı15 yazmadı
+bunun sebebi i 15e eşit olduğunda altta kalan çıktıların bir anlamı olmuyor ve döngü 15den sonra yeniden çalışmaya başlıyor ilk çıktı continue kullanımı16 oluyor
+*/
+
+//return
+/*for içinde return kullanımı sadece fonksiyon içindeyse olur, yoksa illegal return statement hatası alınır*/
+/*for (let i=0; i<10; i++) {
+   if (i==5) { 
+      return
+   }
+ console.log("return kullanımı"+ i)} // üsteki hatayı verdi*/
+
+
+
+
+
+
+
+
+
 
 
