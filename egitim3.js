@@ -89,6 +89,7 @@ for(let i=10; i<30 ; i++) {
    }
    console.log(" continue kullanımı"+ i)
 }
+console.clear();
 /* çıktı olarak 10dan 29 a kadar continue kullanımı + i değerini yazdı fakat continue kullanımı15 yazmadı
 bunun sebebi i 15e eşit olduğunda altta kalan çıktıların bir anlamı olmuyor ve döngü 15den sonra yeniden çalışmaya başlıyor ilk çıktı continue kullanımı16 oluyor
 */
@@ -100,6 +101,54 @@ bunun sebebi i 15e eşit olduğunda altta kalan çıktıların bir anlamı olmuy
       return
    }
  console.log("return kullanımı"+ i)} // üsteki hatayı verdi*/
+
+// bölüm sonu oyunlu soru
+/*
+Math.random() ile rastgele sayı üretilir. Bu fonksiyon 0 dahil, 1 hariç bir değer üretir (0-0.9). Üretilen değeri istediğimiz
+aralığın üst sınırıyla çarparsanız verilen aralıkta değer üretmiş oluruz.
+örnek:
+0 ile 10 arasında bir sayı için :
+(Math.random() * 10)+1 bize 1 ile 10 arasındaki 10 da dahil sayı üretmiş olur.
+üretilen bu sayı ondalıklı olabilir, bunu tam sayıya dönüştürmek için Math.floor() kullanabiliriz.
+
+Tasarlayacağımız piyango oyunu bilgileri:
+Sistem iki basamaklı bir sayı üretmeli, kullanıcıdan da sayı girişi istenerek bu sayının tahmin edilmesi istenmeli.
+Eğer kullanıcı sayıyı tam olarak doğru bilirse 10.000 tl,
+Eğer kullanıcı sayının basamaklarını bilirse (yani 65 yerine 56 yazmışsa) 5000 tl,
+Eğer kullanıcı sayının sadece bir basamağını bilirse 1000 tl kazanır.
+ */
+
+let sistemSayisi = (Math.random() * 90) + 10; // bizden iki basamaklı bir sayı isteniyor, min 0 üretirse en az 10 elde etmek için +10 yaptık. 99 elde etmek için de *90 yaptık.
+console.log("üretilen ondalıklı sayı :" + sistemSayisi)
+sistemSayisi = Math.floor(sistemSayisi); // bu satırda ondalıklı sayıyı tam sayıya çevirdik 
+
+let kullanicininSayisi = parseInt(prompt("iki basamaklı bir sayı giriniz","10"))// promptan gelen sayı string olarak geliyor parseInnt ile int türüne çeviriyoruz
+
+let sistemSayisininbirlerbasamagi = sistemSayisi % 10
+let sistemSayisininonlarbasamagi = Math.floor(sistemSayisi /10)
+
+console.log(`sistem sayısının birler basamağı ${sistemSayisininbirlerbasamagi} , onlar basamağı ${sistemSayisininonlarbasamagi}`)
+
+let userSayisibirlerbasamagi = kullanicininSayisi % 10
+let userSayisionlarbasamagi = Math.floor(kullanicininSayisi/10)
+
+console.log(`kullanıcı sayısının birler basamağı ${userSayisibirlerbasamagi} , onlar basamağı ${userSayisionlarbasamagi}`)
+
+
+console.log(`Sistemin ürettiği sayı ${sistemSayisi} , kullacının girdiği sayı ${kullanicininSayisi}`);
+
+if(sistemSayisi === kullanicininSayisi) {
+   console.log("Tebrikler 10.000 tl kazandınız. Tahmininiz :" + kullanicininSayisi+"sistem sayısı :"+sistemSayisi)
+}else if (sistemSayisininbirlerbasamagi===userSayisionlarbasamagi && sistemSayisininonlarbasamagi === userSayisibirlerbasamagi) { 
+console.log("Tebrikler 5000 tl kazandınız. Tahmininiz :" + kullanicininSayisi+"sistem sayısı :"+sistemSayisi)}
+else if (sistemSayisininbirlerbasamagi === userSayisibirlerbasamagi || sistemSayisininonlarbasamagi === userSayisionlarbasamagi) {
+   console.log("Tebrikler 1000 tl kazandınız. Tahmininiz :" + kullanicininSayisi+"sistem sayısı :"+sistemSayisi)
+}else if (sistemSayisininbirlerbasamagi===userSayisionlarbasamagi || sistemSayisininonlarbasamagi === userSayisibirlerbasamagi){
+   console.log("Tebrikler 500 tl kazandınız. Tahmininiz :" + kullanicininSayisi+"sistem sayısı :"+sistemSayisi)// bu şartı ben ekledim
+}else {
+   console.log("maalesef bir şey kazanamadınız.Tahmininiz :" + kullanicininSayisi +" sistem sayısı :"+sistemSayisi)
+}
+
 
 
 
