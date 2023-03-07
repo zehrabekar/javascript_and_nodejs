@@ -203,19 +203,20 @@ console.log(sonucc) // -3
 
 //ödev soruları çözümleri
 //1.ödev 
+/*
 let saniye = 130
 console.log( "130 saniye :" + saniye/60 +  ' '+  "dakika" + ' ' + saniye%60 + ' '+ "saniye") 
 
 let saniyeString = prompt("saniye değeri giriniz","130") //buradaki 100 varsayılan değerdir, kullanıcı değer girmezse 100 kabul edilir
 //prompt ile girilen değerler string olarak kabul dildiğinden number yapıyoruz
-let saniyee = parseInt(saniyeString)
+let saniyee = parseInt(saniyeString) 
 
 let dakika = parseInt((saniyee/60),10) //buradaki 10 dakikanın küsürrlü yazılmaması için sayının onluk sisteme göre yazılmasını sağlar
 let kalanSaniye = saniyee % 60
 
 console.log(typeof saniyee)
 console.log( `Girdiğiniz ${saniyee} değeri : ${dakika} dakika ve ${kalanSaniye} saniyedir`);
-
+*/
 //2.ödev
 let fahrenheit = 100
 let celcius = 5/9 * (fahrenheit - 32)
@@ -224,6 +225,7 @@ console.log(fahrenheit +' '+ "fahrenheit" + ' '+ celcius.toFixed(2)+ ' '+ "celci
 //3.ödev
 let artikYilMi = 2088
 console.log((artikYilMi%400==0) || (artikYilMi%4==0) && (artikYilMi%100==0))
+
 
 
 
