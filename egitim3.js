@@ -117,7 +117,7 @@ Eğer kullanıcı sayıyı tam olarak doğru bilirse 10.000 tl,
 Eğer kullanıcı sayının basamaklarını bilirse (yani 65 yerine 56 yazmışsa) 5000 tl,
 Eğer kullanıcı sayının sadece bir basamağını bilirse 1000 tl kazanır.
  */
-
+/*
 let sistemSayisi = (Math.random() * 90) + 10; // bizden iki basamaklı bir sayı isteniyor, min 0 üretirse en az 10 elde etmek için +10 yaptık. 99 elde etmek için de *90 yaptık.
 console.log("üretilen ondalıklı sayı :" + sistemSayisi)
 sistemSayisi = Math.floor(sistemSayisi); // bu satırda ondalıklı sayıyı tam sayıya çevirdik 
@@ -147,7 +147,7 @@ else if (sistemSayisininbirlerbasamagi === userSayisibirlerbasamagi || sistemSay
    console.log("Tebrikler 500 tl kazandınız. Tahmininiz :" + kullanicininSayisi+"sistem sayısı :"+sistemSayisi)// bu şartı ben ekledim
 }else {
    console.log("maalesef bir şey kazanamadınız.Tahmininiz :" + kullanicininSayisi +" sistem sayısı :"+sistemSayisi)
-}
+}*/
 
 
 

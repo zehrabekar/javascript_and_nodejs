@@ -84,12 +84,54 @@ let final = parseInt(prompt("final notunu giriniz","100"))
      alert("tebrikler, sınıfı geçtiniz. notunuz :" + puan)
  }*/
 
+//soru-4 : kendi adınızı ekranda 5 kere yazdıran uygulamayı tüm döngülerle yapınız.
+//for
+/*
+let adim ="zehra"
+for(let i=0; i<5 ; i++) { 
+    console.log(adim)
+}
 
+//while
+let i=0;
+while(i<5){
+    console.log(adim)
+    i++
+}
 
+//do-while
+let z=0
+do{
+    console.log("zehra")
+    z++
+} while(z<5)
 
+//s-5 : 1den 100e kadar olan sayıların toplamını bulan uygulamayı yazınız
+let toplam = 0;
+for ( let i=1; i<100 ; i++){
+    toplam = toplam + i;
+}console.log("1den 100e kadar olan sayıların toplamı : " +toplam)
 
+//s-6 : 1den 10a kadar olan sayıları sırayla ve aralarında virgül olacak şekilde olan uygulamayı for döngüsü ile yazdırınız
+yazdirilacakMetin = "";
+for(let i=1 ; i<=10 ; i++){
+ if (i!=10){
+ yazdirilacakMetin = yazdirilacakMetin + i + ", "}
+ else {
+    yazdirilacakMetin = yazdirilacakMetin + i 
+ }
+}
+console.log(yazdirilacakMetin)
 
+//s-7 : klavyeden girilen bir değerin faktöriyelini alan bir uygulama yazınız
+let faktoriyel=parseInt(prompt("faktöriyel almak için bir değer giriniz","3"))
+let islemSonucu = 1;
+for(let i =1; i<=faktoriyel; i++){
+   islemSonucu= islemSonucu*i
+}
+console.log("girdiğiniz sayının faktöriyeli : " + islemSonucu)
 
+*/
 
 
 
