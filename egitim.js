@@ -1,5 +1,6 @@
 /*1.bölüm*/
-console.log("Merhaba from egitim.js")
+/*
+console.log("Merhaba from egitim.js")*/
 
 /* 2.bölüm*/
 //temeller

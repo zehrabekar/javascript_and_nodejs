@@ -23,18 +23,18 @@ else {
 } // else if çalıştı
 
 // if (ayseninYasi < fatmaninYasi) -> bundan sonra ; kullanılmamalı
-
+/*
 let ismim= "zehra"
 if (ismim === "zehra") 
-    console.log("merhaba zehra")
+    console.log("merhaba zehra")*/
 // bu şekilde tek satır varsa {} kullanmaya gerek yok
-
+/*
 let ismim1= "zehra"
 if (ismim1 === "zehra") {
     console.log("merhaba zehra")
     console.log("nasılsın")
 }
-
+*/
 let rakam = 5, rakam1 = 6
     if(rakam > rakam1) {
         if (rakam <0)
