@@ -62,3 +62,50 @@ function belliAraliktakiSayilariTopla(baslangicSayisi, bitisSayisi){
     console.log("belli aralıktaki sayıların toplamı : " + toplam);
     return toplam;
 }
+
+
+//global scope : bütün dosya boyunca bilinen değişkenlerdir. tanımlandığı alan bir döngü içi ya da fonksiyon içi ile sınırlı değildir.
+// local scope : tanımı bir fonksiyon ya da döngü içinde yapılan ve bu alanda sınırlı kalan değişkenlerdir
+
+let isim = "zehra" // global scope
+
+function selam() {
+    let yas = 22; // bu değişkenin sınırı bu süslü parantez arasıdır. parantez dışında bu değişkeni kullanamayız (local scope)
+    console.log("merhaba "+isim + " yaş :"+yas);// merhaba zehra yaş 22 yazdı
+}
+selam() // consoleda merhaba zehra yazdı
+
+/*ben dışarıda yas adında bir değişken tanımlayabilirim çünkü üstteki yas değişkeni local değişkendir ama isim adında yeni değişken oluşturamam çünkü yukarıda isim
+adında global değişken zaten tanımladım.*/
+//console.log("yaş :" + yas); - yas local değişken olduğu için yas is not defined uyarısı verdi
+
+function favoriRenginNe(renk) {
+    console.log("favori rengim : " + renk);
+}
+favoriRenginNe("mor")
+
+/* yukarıdakini yazmanın farklı yolu
+let renk = "mor"
+function favoriRenginNe(renk) {
+    console.log("favori rengim : " + renk); }
+*/
+
+let favRengim = "mor";
+function favoriRenginNe(renk) {
+    let favRengim  = "sarı";
+    console.log("favori rengim : " + favRengim); //fonksiyon içindeki yazdırma işleminde renk olarak sarı verdi
+  }
+  console.log("fonksiyon dışında favori rengim : " + favRengim); //fonksiyon dışındaki yazdırma işleminde renk olarak mor verdi
+
+// fonksiyon içinde tanımlanan favRengim değişkeni sadece o alanda var olduğu için  favrengim adında global değişken olmasına rağmen tanımlanmasında bir sıkıntı yoktur.
+//burada hem global olarak hem de local olarak aynı isimde favRengim değişkeini oluşturduk. ekrana local değişkenin adını (favori rengim : sarı) yazdırdı
+// scopeları farklı aynı isimdeki değişkenlere shadowed variable denir.
+
+/*
+let favRengim = "mor";
+function favoriRenginNe(renk) {
+    favRengim  = "sarı"; // burada favrengimi değerini değiştirdik . let ile yeni bir değişken tanımlamadık bu yüzden fonksiyon dışındaki console da rengi sarı olarak yazdırır
+    console.log("favori rengim : " + favRengim); //fonksiyon içindeki yazdırma işleminde renk olarak sarı verdi
+  }
+  console.log("fonksiyon dışında favori rengim : " + favRengim);
+  */
