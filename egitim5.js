@@ -109,3 +109,83 @@ function favoriRenginNe(renk) {
   }
   console.log("fonksiyon dışında favori rengim : " + favRengim);
   */
+
+//es6 fatArrow kullanımı
+//es6 : kodların yazımıyla ilgili bazı standartları belirleyen bir yapıdır
+
+//normal fonksiyon tanımlayıp çağırma : 
+function selam() {
+    console.log("selam");
+}
+selam(); // consoleda selam yazdı
+
+// bir fonksiyonu bir değişkene atayabiliriz. isimsiz bir fonksiyon oluşturup selamDegisken değişkenine atadık :
+const selamDegisken = function () {
+    console.log("selam selamDegisken")
+}
+
+console.log(selamDegisken); // bu şekilde yazınca :
+/*ƒ () {
+    console.log("selam selamDegisken")
+} göründü */
+
+selamDegisken(); // böyle yazınca selam selamDegisken yazdı
+
+// es6
+const fatArrow = () => {
+    console.log("selam fatArrow")
+}
+fatArrow();
+/*()-> parametre yazılacak yer
+=> -> function kelimesinden kutulmak için */
+
+/* eğer parametre listemiz boşsa () yerine _ koyabiliriz
+_'nin anlamı : bu bir fonksiyon fakat herhangi bir parametre almıyor
+const fatArrow = _ => {
+    console.log("selam fatArrow")
+}*/
+
+// parametre alan, geriye değer döndüren fonksiyonlarda :
+// sayını karesini alan fonksiyon
+function karesiniAl (sayi) {
+    return sayi * sayi ;
+}
+
+const karesiniAlDegisken = function (sayi) // bunlara isimsiz fonksiyon (anonymous) denir
+ {
+    return sayi * sayi ;
+}
+console.log(karesiniAl(5)); 
+console.log(karesiniAlDegisken(8)); 
+
+// fat arrow ile :
+const fatArrowParametreli = (sayi) => {
+    return sayi*sayi;
+}
+console.log(fatArrowParametreli(9));
+
+const fatArrowParametreliKisa = (sayi) => {
+    return sayi*sayi;
+}
+console.log(fatArrowParametreliKisa(7));
+// bizim tek parametremiz varsa parantez kullanmak zorunda değiliz
+/* eğer => (fatarrow)dan sonra süslü parantez içine tek satır kod yazacaksak yani ekstra console.log ifadesi vs yoksa {} kullanmayabiliriz 
+ve eğer süslü parantezi kaldırırsak return yazamiyoruz sadece sayi*sayi; yazıyoruz */
+const fatArrowParametreliKisa2 = sayi => sayi*sayi;
+// üstteki fonksiyon 1 parametre alır ve sayi*sayi bu işlemin sonucunu return eder
+console.log(fatArrowParametreliKisa2(10));
+
+const sayilariToplayalim = (s1,s2) => s1 + s2;
+
+console.log(sayilariToplayalim(5,10));
+
+
+
+
+
+
+
+
+
+
+

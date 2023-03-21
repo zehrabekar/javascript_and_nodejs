@@ -94,6 +94,31 @@ console.clear();
 bunun sebebi i 15e eşit olduğunda altta kalan çıktıların bir anlamı olmuyor ve döngü 15den sonra yeniden çalışmaya başlıyor ilk çıktı continue kullanımı16 oluyor
 */
 
+/*Döngü çalışması sırasında Continue ile karşılaşıldığı zaman continue’nin altında kalan kısım atlanır ve tekrar döngünün başına dönülür. Break’te ise döngü tamamen kırılıp daha dönecek sayaç’ı olmasına rağmen döngü biter. 
+  Aşağıdaki ilk for döngüsünde normal şartlarda kodun 0’dan 10a kadar sayıları yazmasını bekleriz. Ancak sayaç 5’e geldiğinde continue ile karşılacak ve döngü kapsamında kalan kod kısmını atlayıp bir sonraki sayaç rakamına 
+  6’ya geçerek tekrar akışına devam edecektir. Ve 5 sayisini ekrana yazdırmayacaktır. ikinci döngüde ise continue yerine break kullanılmıştır. Burada sayaç 5’e geldiğinde döngü tamamen biter. Döngülerin çıktıları yanlarında 
+  yorum satırı olarak verilmiştir.
+
+  for(let i=0; i<=10; i++) // 0 1 2 3 4 6 7 8 9 10
+  {
+   if (i==5)
+   continue; // continue altında kalan kısmı atladı yani 5 değerini yazdırmadı ve döngünün başına döndü
+   console.log(i+"</br>");
+
+  }
+
+   for(let i=0; i<=10; i++) // 0 1 2 3 4 
+   {
+   if (i==5)
+   break;
+   console.log(i+"</br>");
+   
+  }
+
+  Break komutu ile döngüyü kırıp sonlandırırken continue komutu ise sadece koşulun sağlandığı adımı atlar ve devam eder. 
+
+
+ */
 //return
 /*for içinde return kullanımı sadece fonksiyon içindeyse olur, yoksa illegal return statement hatası alınır*/
 /*for (let i=0; i<10; i++) {
