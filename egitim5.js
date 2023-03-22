@@ -178,6 +178,70 @@ console.log(fatArrowParametreliKisa2(10));
 const sayilariToplayalim = (s1,s2) => s1 + s2;
 
 console.log(sayilariToplayalim(5,10));
+console.clear();
+
+
+//array : verileri bir arada tutan yapılara dizi denir.
+//araba markalarını tutan dizi oluşturma :
+let arabaMarkalari = ["Mercedes ", "BMW " ,"Audi "];
+console.log("araba dizisi : " + arabaMarkalari);
+console.log(arabaMarkalari);
+/* yukarıdaki iki yazdırma işleminin çıktıları farklıdır. birinci yazdırma işleminde :
+araba dizisi : Mercedes ,BMW ,Audi şeklinde , 
+ikincide :
+(3) ['Mercedes ', 'BMW ', 'Audi ']
+0: "Mercedes "
+1: "BMW "
+2: "Audi "
+length: 3
+[[Prototype]]: Array(0) 
+şeklinde çıktısı oldu. 
+bunun sebebi ilk yazdırma işlemine (console.log("araba dizisi : " + arabaMarkalari);) otomatik toString() methodu uygulanmasıdır(console.log("araba dizisi : " + arabaMarkalari.toString());).*/
+
+/* yukarıda ikinci çıktıdaki 3 kaç eleman olduğunu, 0 1 2 de index no gösterir.
+dizilerde elemanlara ulaşırken indexleri kullanırız.
+index sayısı = eleman sayısı - 1
+20 elemanlı bir dizide 19 index vardır çünkü indexler 0dan başlar */
+
+// 2.indexdeki elemana ulaşmak için :
+console.log(arabaMarkalari[2])
+
+// bu dizide 3.indexi isteseydik olmadığı için console kısmına undefined yazdıracaktı
+
+// diziye yeni eleman eklemek istersek :
+arabaMarkalari[3] = "honda"
+
+// var olan elemanı güncelleme/değiştirme :
+arabaMarkalari[1] = "citroen"
+
+// 4 elemanlı bir dizide olmayan 20.indexe değer verme işlemi yaparsak 3. index ile 20. index arasına virgülle ile ayırarak boş değerer verir
+arabaMarkalari[20] = "suzuki"
+console.log("araba dizisi : " + arabaMarkalari); //Mercedes ,citroen,Audi ,honda,,,,,,,,,,,,,,,,,suzuki çıktısını verdi
+
+//dizide kaç eleman olduğunu bulma :
+console.log("araba dizisi uzunluğu : " + arabaMarkalari.length); // 21
+
+// dizideki elemanları tek tek ekrana bastırmak için for döngüsünü kullanabilirm:
+for( let i=0; i< arabaMarkalari.length;i++){
+
+    console.log(arabaMarkalari[i]);
+
+}
+console.log("****************************")
+// ya da 
+
+for (let oankidizielemani of arabaMarkalari) {
+    console.log(oankidizielemani);
+}
+
+// bir dizide farklı türdeki verileri de tutabiliriz :
+let yeniDizi = [1 , "zehra" , true];
+for (let oankidizielemani of yeniDizi) {
+    console.log(oankidizielemani)
+}
+
+
+
 
 
 
