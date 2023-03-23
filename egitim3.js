@@ -94,6 +94,31 @@ console.clear();
 bunun sebebi i 15e eşit olduğunda altta kalan çıktıların bir anlamı olmuyor ve döngü 15den sonra yeniden çalışmaya başlıyor ilk çıktı continue kullanımı16 oluyor
 */
 
+/*Döngü çalışması sırasında Continue ile karşılaşıldığı zaman continue’nin altında kalan kısım atlanır ve tekrar döngünün başına dönülür. Break’te ise döngü tamamen kırılıp daha dönecek sayaç’ı olmasına rağmen döngü biter. 
+  Aşağıdaki ilk for döngüsünde normal şartlarda kodun 0’dan 10a kadar sayıları yazmasını bekleriz. Ancak sayaç 5’e geldiğinde continue ile karşılacak ve döngü kapsamında kalan kod kısmını atlayıp bir sonraki sayaç rakamına 
+  6’ya geçerek tekrar akışına devam edecektir. Ve 5 sayisini ekrana yazdırmayacaktır. ikinci döngüde ise continue yerine break kullanılmıştır. Burada sayaç 5’e geldiğinde döngü tamamen biter. Döngülerin çıktıları yanlarında 
+  yorum satırı olarak verilmiştir.
+
+  for(let i=0; i<=10; i++) // 0 1 2 3 4 6 7 8 9 10
+  {
+   if (i==5)
+   continue; // continue altında kalan kısmı atladı yani 5 değerini yazdırmadı ve döngünün başına döndü
+   console.log(i+"</br>");
+
+  }
+
+   for(let i=0; i<=10; i++) // 0 1 2 3 4 
+   {
+   if (i==5)
+   break;
+   console.log(i+"</br>");
+   
+  }
+
+  Break komutu ile döngüyü kırıp sonlandırırken continue komutu ise sadece koşulun sağlandığı adımı atlar ve devam eder. 
+
+
+ */
 //return
 /*for içinde return kullanımı sadece fonksiyon içindeyse olur, yoksa illegal return statement hatası alınır*/
 /*for (let i=0; i<10; i++) {
@@ -117,7 +142,7 @@ Eğer kullanıcı sayıyı tam olarak doğru bilirse 10.000 tl,
 Eğer kullanıcı sayının basamaklarını bilirse (yani 65 yerine 56 yazmışsa) 5000 tl,
 Eğer kullanıcı sayının sadece bir basamağını bilirse 1000 tl kazanır.
  */
-
+/*
 let sistemSayisi = (Math.random() * 90) + 10; // bizden iki basamaklı bir sayı isteniyor, min 0 üretirse en az 10 elde etmek için +10 yaptık. 99 elde etmek için de *90 yaptık.
 console.log("üretilen ondalıklı sayı :" + sistemSayisi)
 sistemSayisi = Math.floor(sistemSayisi); // bu satırda ondalıklı sayıyı tam sayıya çevirdik 
@@ -147,7 +172,7 @@ else if (sistemSayisininbirlerbasamagi === userSayisibirlerbasamagi || sistemSay
    console.log("Tebrikler 500 tl kazandınız. Tahmininiz :" + kullanicininSayisi+"sistem sayısı :"+sistemSayisi)// bu şartı ben ekledim
 }else {
    console.log("maalesef bir şey kazanamadınız.Tahmininiz :" + kullanicininSayisi +" sistem sayısı :"+sistemSayisi)
-}
+}*/
 
 
 

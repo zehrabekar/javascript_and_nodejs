@@ -1,5 +1,6 @@
 /*1.bölüm*/
-console.log("Merhaba from egitim.js")
+/*
+console.log("Merhaba from egitim.js")*/
 
 /* 2.bölüm*/
 //temeller
@@ -37,7 +38,7 @@ sabit değişkene tekrar değer atama işlemi yapmaya çalıştığım için hat
 const piSayisi = 3.14
 console.log(piSayisi)
 
-// bir değişken oluştururken let veya const kullanmadan da oluşturulur fakat doğru değilir kullanılmaması gerekir
+// bir değişken oluştururken let veya const kullanmadan da oluşturulur fakat doğru değildir kullanılmaması gerekir
 notum = 100;
 console.log(notum)
 
