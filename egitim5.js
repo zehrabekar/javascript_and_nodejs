@@ -240,6 +240,52 @@ for (let oankidizielemani of yeniDizi) {
     console.log(oankidizielemani)
 }
 
+// önemli array metotları
+let isimler = ["zehra","melike","hacer"];
+console.log(isimler.toString()); // toString() dizi içerğini metin olarak gösterir
+
+console.log(isimler.join(" | "));// join("istediğimiz ayırma ifadesi")
+// zehra | melike | hacer -> varsayılan olarak gelen virgül yerine elemanları join içine yazdığımız eleman ayırır
+
+let diziElemanSayisi = isimler.push("esma")
+console.log(isimler.toString() + " ; dizinin eleman sayısı :" + diziElemanSayisi); // diziye esma elemanını sondan ekledi
+// push() metodu diziye sondan eleman ekler ve yeni dizinin eleman sayısını söyler
+
+let dizidenCikarilanEleman = isimler.pop();
+console.log(isimler + " ; çıkarılan eleman : " + dizidenCikarilanEleman); // sondaki elemanı siler ve çıkarılan elemanı gösterir
+
+isimler.shift();
+console.log(isimler.toString());
+// diziyi sola kaydırarak ilk elemanı diziden atmış olur ve ilk eleman silinmiş olur.
+
+isimler.unshift("zehraa");
+console.log(isimler.toString());
+// diziyi sağa kaydırarak ilk elemanın yeri boş kalır ve oraya yeni elemanı ekler
+
+delete isimler[1];
+console.log(isimler.toString() + " " + isimler[1]);// çıktı : zehraa,,hacer undefined
+// dizinin 1.indexindeki elemanı sildi ve orası boş kaldı. hacer değerini sola kaydırmadı
+
+let sayilar = [1,2,3,4,5,6,7,8]
+sayilar.splice(8,0,9,10);// (hangi indexden başlayacak, kaç eleman silinecek , geriye string değer döndürür )
+console.log(sayilar.toString());//çıktı : 1,2,3,4,5,6,7,9,10,8
+// (8,0,9,10) -> 8. indexden başla, hiçbir elemanı silme ,sonuncu elemanın sağına 9 ve 10 ekle
+
+let silinenler = sayilar.splice(0,4,15,20,25);// 0. indexden başladı, 4 eleman sildi.en baştan 15 20 25 elemanlarını ekledi
+console.log(sayilar.toString()); // 15,20,25,5,6,7,8,9,10
+console.log(silinenler);// splice metodu silinen elemanlardan yeni bir dizi oluşturur. [1, 2, 3, 4]
+
+let tekSayilar = [1,3,5];
+let ciftSayilar = [2,4,6];
+
+let sayilarim = tekSayilar.concat(ciftSayilar);
+console.log(sayilarim); // [1, 3, 5, 2, 4, 6]
+// dizileri birleştirdi ve yeni dizi oluştu
+
+let yeniDizim = sayilarim.slice(2,4)
+console.log(yeniDizim.toString()+ " " + sayilarim.toString()); // 2.elemandan başla 4. elemana kadar yeni dşzş oluştur. çıktı : 5,2  1, 3, 5, 2, 4, 6 (kaynak dizi bozulmadan yeni dizi oluşturur)
+
+
 
 
 
