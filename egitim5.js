@@ -354,6 +354,6 @@ let huseyin = new Object();
 huseyin.ad="hüseyin"
 huseyin.dogumYili = 1995;
 console.log(huseyin);
-console.log(huseyin.soyAd);//undefined
+console.log(huseyin.soyAd);//undefined 
 
 
