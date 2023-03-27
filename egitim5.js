@@ -287,15 +287,73 @@ console.log(yeniDizim.toString()+ " " + sayilarim.toString()); // 2.elemandan ba
 
 
 
+//object : içerisinde birden fazla değeri depolayan yapılardır. Property olarak bilinen bu değerler primitive(String,number, boolean vb.) veya başka objeler olabilirler.
 
+let zehra = {
 
+    ad : 'zehra',
+    soyAd : 'bekar',
+    dogumYili : 2001,
+    ogrenciMi : true,
+    sevdigiRenkler : ['mor' , 'mavi'],
+    yasiHesapla : function(dogumYili) {
+        return 2023 - dogumYili
+    }
 
+}
+// sol taraftakiler key(anahtar), sağ taraftakiler value(değer).
+// object içinde dizi tanımlayabiliriz.
 
+console.log(zehra); // içindeki tüm değerlere eriştik
 
+// sadece doğum yilina erişmek için :
+console.log(zehra.dogumYili);
+//ya da 
+console.log(zehra['dogumYili']);
 
+let yasi = zehra.yasiHesapla(2001);
+console.log(yasi);
+// console.log(zehra.yasiHesapla(2001));
 
+let kadir = {
 
+    ad : 'kadir',
+    soyAd : 'bekar',
+    dogumYili : 1996,
+    ogrenciMi : false,
+    sevdigiRenkler : ['mavi' , 'siyah'],
+    yasiniHesapla : function() {
+        this.yas = 2023 - this.dogumYili;
+//normalde kadir nesnesinin içinde yas diye bir alan yok. fakat fonksiyon tetiklendiğinde eklenecek.
+//console.log(kadir.yas); , dediğimizde bize direkt olarak yas değerini veremez. önce emre.yasinihesapla(); yazılıp fonksiyon tetiklendikten sonra console.log(kadir.yas); yazınca yas değerini alabiliriz.
+}
+}
 
+console.log(kadir); 
+console.log(kadir.dogumYili);
+console.log(kadir['dogumYili']);
 
+let yas = kadir.yasiniHesapla();
+console.log(kadir.yasiniHesapla());
+
+/*kadir içindeki yasinihesapla fonksiyonunda zehradaki gibi dogum yili parametresi yok. o yüzden yasşını hesaplarken
+dogumYilinin başına this koyuyoruz. bunun anlamı bulunduğu object içindeki doğum yilini getir.
+this , object içindeki alanları kullanmamızı sağlar*/
+
+// bu objeleri biz dizide saklayabiliriz
+let kisiler = [zehra,kadir];
+console.log(kisiler[0].ad);
+
+//değerleri güncellemek
+zehra.ad="zehraa"
+console.log(zehra.ad);
+zehra[ 'ad']="zehraaa"
+console.log(zehra.ad);
+
+let huseyin = new Object();
+huseyin.ad="hüseyin"
+huseyin.dogumYili = 1995;
+console.log(huseyin);
+console.log(huseyin.soyAd);//undefined
 
 
