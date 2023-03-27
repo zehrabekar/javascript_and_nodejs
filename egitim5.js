@@ -356,4 +356,57 @@ huseyin.dogumYili = 1995;
 console.log(huseyin);
 console.log(huseyin.soyAd);//undefined 
 
+console.clear();
+//referans tipler çalışma mantığı 
+
+//primitive tipler
+let yass = 22;
+let yeniYass = yass;
+
+yass = 10;
+console.log(yass, yeniYass);
+// çıktı olarak 10 22 geldi. yeniyass değişkeninin ilk değerini değiştirmedi
+
+let ismim = "zehra"
+let yeniIsmim=ismim;
+
+ismim="zehraa"
+console.log(ismim, yeniIsmim);
+//çıktı : zehraa zehra
+
+//referans tipli array object
+let renkler = ["mavi","yeşil"]
+let yeniRenkler = renkler
+
+renkler = ["sarı","yeşil"]
+renkler.push("mor")
+
+// renkler = ["sarı","yeşil"] bu tanımdan sonra yeni bir adres oluşur ve yeniRenkler ilk renklerin değerini alır ve ikinci renklerin içeriğinden etkilenmez . içerik olarak ilk renklerle aynı bile olsaydı yinede adres yeni adres olacaktı
+
+console.log(renkler, yeniRenkler);
+//çıktı : (3) ['mavi', 'yeşil', 'mor'] (3) ['mavi', 'yeşil', 'mor']
+// primitive tiplerde olduğu gibi yeniRenkler renklerin ilk hali gibi kalmadı ve sonradan eklenen mor değeride yeniRenklerde görüldü
+/*
+referans tipler çalışma mantığı : renkler değişken adı mavi yeşil mor değerlerini değil o yapının adresini tutar.
+yeniRenkler = renkler demek yeniRenkler renklerin tuttuğu adresi tutuyor demektir
+renklere yeni bir değer eklesek bile (içerik değişti ) adres değişmediği için ikiside aynı adrese gider ve aynı içeriği gösterir */ 
+
+let ogrenci={
+    ad : 'zehra',
+    yas : 22
+}
+
+let yeniOgrenci = ogrenci
+yeniOgrenci.yas=28;
+
+console.log(ogrenci , yeniOgrenci);
+//her ikisinde de yas 28 oldu
+
+
+
+
+
+
+
+
 
