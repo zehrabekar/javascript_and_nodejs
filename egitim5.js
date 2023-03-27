@@ -402,11 +402,58 @@ yeniOgrenci.yas=28;
 console.log(ogrenci , yeniOgrenci);
 //her ikisinde de yas 28 oldu
 
+//instanceof kullanımı :
+console.log(ogrenci instanceof Array); // bu bir array mi ? hayır çıktı olarak false dedi
+console.log(ogrenci instanceof String);//false
+console.log(ogrenci instanceof Object);//true
+
+let renklerim=["mor"]
+console.log(renklerim[0]);
+console.log(typeof renklerim);
+console.log(renklerim instanceof Object);//true
+console.log(renklerim instanceof Array);//true
+// diziler hem arrayin hem de objectin bir parçasıdır
+
+const fonksiyon = function() {
+    console.log("merhaba");
+}
+console.log(fonksiyon.toString()); // function() {  console.log("merhaba");  }
+fonksiyon(); // çıktı : merhaba
+
+console.log(typeof fonksiyon) // function
+console.log(fonksiyon instanceof Function) // true
+console.log(fonksiyon instanceof Array) // false
+console.log(fonksiyon instanceof Object) // true
+
+fonksiyon.test = "deneme"
+console.log(fonksiyon.test);
+// fonksiyonlar obje olduğu için yukarıdaki atama şeklini kullanabiliriz.(çok kullanılmaz)
+
+let rakam = 2;
+const fonk = function (rakam) {
+    rakam = rakam * 2
+    return rakam;
+}
+
+console.log(fonk(rakam)); // 4
+console.log(rakam); // 2
 
 
+let myDizi = [1,2,3]
+const ikiyleCarp = function(dizi) {
+    let geciciDizi = [];
+    for (let i=0; i<dizi.length; i++){
+    geciciDizi[i] = dizi[i]*2;
+}
+return geciciDizi ;
+}
+console.log(ikiyleCarp(myDizi)); // (3) [2, 4, 6]
+console.log(myDizi);// (3) [2, 4, 6]
+//burada mydizideki 1 2 3 değerlerini değil myDizinin bellek adresini yolladığımız için myDizi değişti 
+/*bu fonksiyona bir dizi yolluyoruz. bu dizinin elemanları 1,2,3 . dizinin her elemanı gezilerek 2 ile çarpılıyor ve 0 indexinde bulunan 1 değeri yerine 2 yazılıyor.bu şekilde tüm indexlerdeki değerler yeni değerini alıyor*/
 
+// dizilerle işlem yaparken ana yapının bozulmasını istemiyorsak o dizinin kopyasını kullanırız
 
-
-
-
-
+console.log("kopya dizi : " + ikiyleCarp(myDizi)); // (3) [2, 4, 6]
+console.log( "ana dizi : "+ myDizi);// (3) [1, 2, 3]
+// fonksiyonlar da objedir
