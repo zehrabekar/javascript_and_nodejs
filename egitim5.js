@@ -350,6 +350,7 @@ console.log(zehra.ad);
 zehra[ 'ad']="zehraaa"
 console.log(zehra.ad);
 
+//object oluşturmanın 2.yolu
 let huseyin = new Object();
 huseyin.ad="hüseyin"
 huseyin.dogumYili = 1995;
@@ -457,3 +458,4 @@ console.log(myDizi);// (3) [2, 4, 6]
 console.log("kopya dizi : " + ikiyleCarp(myDizi)); // (3) [2, 4, 6]
 console.log( "ana dizi : "+ myDizi);// (3) [1, 2, 3]
 // fonksiyonlar da objedir
+
