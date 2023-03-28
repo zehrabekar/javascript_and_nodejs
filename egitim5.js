@@ -240,16 +240,222 @@ for (let oankidizielemani of yeniDizi) {
     console.log(oankidizielemani)
 }
 
+// önemli array metotları
+let isimler = ["zehra","melike","hacer"];
+console.log(isimler.toString()); // toString() dizi içerğini metin olarak gösterir
+
+console.log(isimler.join(" | "));// join("istediğimiz ayırma ifadesi")
+// zehra | melike | hacer -> varsayılan olarak gelen virgül yerine elemanları join içine yazdığımız eleman ayırır
+
+let diziElemanSayisi = isimler.push("esma")
+console.log(isimler.toString() + " ; dizinin eleman sayısı :" + diziElemanSayisi); // diziye esma elemanını sondan ekledi
+// push() metodu diziye sondan eleman ekler ve yeni dizinin eleman sayısını söyler
+
+let dizidenCikarilanEleman = isimler.pop();
+console.log(isimler + " ; çıkarılan eleman : " + dizidenCikarilanEleman); // sondaki elemanı siler ve çıkarılan elemanı gösterir
+
+isimler.shift();
+console.log(isimler.toString());
+// diziyi sola kaydırarak ilk elemanı diziden atmış olur ve ilk eleman silinmiş olur.
+
+isimler.unshift("zehraa");
+console.log(isimler.toString());
+// diziyi sağa kaydırarak ilk elemanın yeri boş kalır ve oraya yeni elemanı ekler
+
+delete isimler[1];
+console.log(isimler.toString() + " " + isimler[1]);// çıktı : zehraa,,hacer undefined
+// dizinin 1.indexindeki elemanı sildi ve orası boş kaldı. hacer değerini sola kaydırmadı
+
+let sayilar = [1,2,3,4,5,6,7,8]
+sayilar.splice(8,0,9,10);// (hangi indexden başlayacak, kaç eleman silinecek , geriye string değer döndürür )
+console.log(sayilar.toString());//çıktı : 1,2,3,4,5,6,7,8,9,10
+// (8,0,9,10) -> 8. indexden başla, hiçbir elemanı silme ,sonuncu elemanın sağına 9 ve 10 ekle
+
+let silinenler = sayilar.splice(0,4,15,20,25);// 0. indexden başladı, 4 eleman sildi.en baştan 15 20 25 elemanlarını ekledi
+console.log(sayilar.toString()); // 15,20,25,5,6,7,8,9,10
+console.log(silinenler);// splice metodu silinen elemanlardan yeni bir dizi oluşturur. [1, 2, 3, 4]
+
+let tekSayilar = [1,3,5];
+let ciftSayilar = [2,4,6];
+
+let sayilarim = tekSayilar.concat(ciftSayilar);
+console.log(sayilarim); // [1, 3, 5, 2, 4, 6]
+// dizileri birleştirdi ve yeni dizi oluştu
+
+let yeniDizim = sayilarim.slice(2,4)
+console.log(yeniDizim.toString()+ " " + sayilarim.toString()); // 2.elemandan başla 4. elemana kadar yeni dşzş oluştur. çıktı : 5,2  1, 3, 5, 2, 4, 6 (kaynak dizi bozulmadan yeni dizi oluşturur)
 
 
 
+//object : içerisinde birden fazla değeri depolayan yapılardır. Property olarak bilinen bu değerler primitive(String,number, boolean vb.) veya başka objeler olabilirler.
+
+let zehra = {
+
+    ad : 'zehra',
+    soyAd : 'bekar',
+    dogumYili : 2001,
+    ogrenciMi : true,
+    sevdigiRenkler : ['mor' , 'mavi'],
+    yasiHesapla : function(dogumYili) {
+        return 2023 - dogumYili
+    }
+
+}
+// sol taraftakiler key(anahtar), sağ taraftakiler value(değer).
+// object içinde dizi tanımlayabiliriz.
+
+console.log(zehra); // içindeki tüm değerlere eriştik
+
+// sadece doğum yilina erişmek için :
+console.log(zehra.dogumYili);
+//ya da 
+console.log(zehra['dogumYili']);
+
+let yasi = zehra.yasiHesapla(2001);
+console.log(yasi);
+// console.log(zehra.yasiHesapla(2001));
+
+let kadir = {
+
+    ad : 'kadir',
+    soyAd : 'bekar',
+    dogumYili : 1996,
+    ogrenciMi : false,
+    sevdigiRenkler : ['mavi' , 'siyah'],
+    yasiniHesapla : function() {
+        this.yas = 2023 - this.dogumYili;
+//normalde kadir nesnesinin içinde yas diye bir alan yok. fakat fonksiyon tetiklendiğinde eklenecek.
+//console.log(kadir.yas); , dediğimizde bize direkt olarak yas değerini veremez. önce kadir.yasinihesapla(); yazılıp fonksiyon tetiklendikten sonra console.log(kadir.yas); yazınca yas değerini alabiliriz.
+}
+}
+
+console.log(kadir); 
+console.log(kadir.dogumYili);
+console.log(kadir['dogumYili']);
+
+let yas = kadir.yasiniHesapla();
+console.log(kadir.yasiniHesapla());
+
+/*kadir içindeki yasinihesapla fonksiyonunda zehradaki gibi dogum yili parametresi yok. o yüzden yasşını hesaplarken
+dogumYilinin başına this koyuyoruz. bunun anlamı bulunduğu object içindeki doğum yilini getir.
+this , object içindeki alanları kullanmamızı sağlar*/
+
+// bu objeleri biz dizide saklayabiliriz
+let kisiler = [zehra,kadir];
+console.log(kisiler[0].ad);
+
+//değerleri güncellemek
+zehra.ad="zehraa"
+console.log(zehra.ad);
+zehra[ 'ad']="zehraaa"
+console.log(zehra.ad);
+
+//object oluşturmanın 2.yolu
+let huseyin = new Object();
+huseyin.ad="hüseyin"
+huseyin.dogumYili = 1995;
+console.log(huseyin);
+console.log(huseyin.soyAd);//undefined 
+
+console.clear();
+//referans tipler çalışma mantığı 
+
+//primitive tipler
+let yass = 22;
+let yeniYass = yass;
+
+yass = 10;
+console.log(yass, yeniYass);
+// çıktı olarak 10 22 geldi. yeniyass değişkeninin ilk değerini değiştirmedi
+
+let ismim = "zehra"
+let yeniIsmim=ismim;
+
+ismim="zehraa"
+console.log(ismim, yeniIsmim);
+//çıktı : zehraa zehra
+
+//referans tipli array object
+let renkler = ["mavi","yeşil"]
+let yeniRenkler = renkler
+
+renkler = ["sarı","yeşil"]
+renkler.push("mor")
+
+// renkler = ["sarı","yeşil"] bu tanımdan sonra yeni bir adres oluşur ve yeniRenkler ilk renklerin değerini alır ve ikinci renklerin içeriğinden etkilenmez . içerik olarak ilk renklerle aynı bile olsaydı yinede adres yeni adres olacaktı
+
+console.log(renkler, yeniRenkler);
+//çıktı : (3) ['mavi', 'yeşil', 'mor'] (3) ['mavi', 'yeşil', 'mor']
+// primitive tiplerde olduğu gibi yeniRenkler renklerin ilk hali gibi kalmadı ve sonradan eklenen mor değeride yeniRenklerde görüldü
+/*
+referans tipler çalışma mantığı : renkler değişken adı mavi yeşil mor değerlerini değil o yapının adresini tutar.
+yeniRenkler = renkler demek yeniRenkler renklerin tuttuğu adresi tutuyor demektir
+renklere yeni bir değer eklesek bile (içerik değişti ) adres değişmediği için ikiside aynı adrese gider ve aynı içeriği gösterir */ 
+
+let ogrenci={
+    ad : 'zehra',
+    yas : 22
+}
+
+let yeniOgrenci = ogrenci
+yeniOgrenci.yas=28;
+
+console.log(ogrenci , yeniOgrenci);
+//her ikisinde de yas 28 oldu
+
+//instanceof kullanımı :
+console.log(ogrenci instanceof Array); // bu bir array mi ? hayır çıktı olarak false dedi
+console.log(ogrenci instanceof String);//false
+console.log(ogrenci instanceof Object);//true
+
+let renklerim=["mor"]
+console.log(renklerim[0]);
+console.log(typeof renklerim);
+console.log(renklerim instanceof Object);//true
+console.log(renklerim instanceof Array);//true
+// diziler hem arrayin hem de objectin bir parçasıdır
+
+const fonksiyon = function() {
+    console.log("merhaba");
+}
+console.log(fonksiyon.toString()); // function() {  console.log("merhaba");  }
+fonksiyon(); // çıktı : merhaba
+
+console.log(typeof fonksiyon) // function
+console.log(fonksiyon instanceof Function) // true
+console.log(fonksiyon instanceof Array) // false
+console.log(fonksiyon instanceof Object) // true
+
+fonksiyon.test = "deneme"
+console.log(fonksiyon.test);
+// fonksiyonlar obje olduğu için yukarıdaki atama şeklini kullanabiliriz.(çok kullanılmaz)
+
+let rakam = 2;
+const fonk = function (rakam) {
+    rakam = rakam * 2
+    return rakam;
+}
+
+console.log(fonk(rakam)); // 4
+console.log(rakam); // 2
 
 
+let myDizi = [1,2,3]
+const ikiyleCarp = function(dizi) {
+    let geciciDizi = [];
+    for (let i=0; i<dizi.length; i++){
+    geciciDizi[i] = dizi[i]*2;
+}
+return geciciDizi ;
+}
+console.log(ikiyleCarp(myDizi)); // (3) [2, 4, 6]
+console.log(myDizi);// (3) [2, 4, 6]
+//burada mydizideki 1 2 3 değerlerini değil myDizinin bellek adresini yolladığımız için myDizi değişti 
+/*bu fonksiyona bir dizi yolluyoruz. bu dizinin elemanları 1,2,3 . dizinin her elemanı gezilerek 2 ile çarpılıyor ve 0 indexinde bulunan 1 değeri yerine 2 yazılıyor.bu şekilde tüm indexlerdeki değerler yeni değerini alıyor*/
 
+// dizilerle işlem yaparken ana yapının bozulmasını istemiyorsak o dizinin kopyasını kullanırız
 
-
-
-
-
-
+console.log("kopya dizi : " + ikiyleCarp(myDizi)); // (3) [2, 4, 6]
+console.log( "ana dizi : "+ myDizi);// (3) [1, 2, 3]
+// fonksiyonlar da objedir
 
