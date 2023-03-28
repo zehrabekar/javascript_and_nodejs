@@ -268,7 +268,7 @@ console.log(isimler.toString() + " " + isimler[1]);// çıktı : zehraa,,hacer u
 
 let sayilar = [1,2,3,4,5,6,7,8]
 sayilar.splice(8,0,9,10);// (hangi indexden başlayacak, kaç eleman silinecek , geriye string değer döndürür )
-console.log(sayilar.toString());//çıktı : 1,2,3,4,5,6,7,9,10,8
+console.log(sayilar.toString());//çıktı : 1,2,3,4,5,6,7,8,9,10
 // (8,0,9,10) -> 8. indexden başla, hiçbir elemanı silme ,sonuncu elemanın sağına 9 ve 10 ekle
 
 let silinenler = sayilar.splice(0,4,15,20,25);// 0. indexden başladı, 4 eleman sildi.en baştan 15 20 25 elemanlarını ekledi
@@ -325,7 +325,7 @@ let kadir = {
     yasiniHesapla : function() {
         this.yas = 2023 - this.dogumYili;
 //normalde kadir nesnesinin içinde yas diye bir alan yok. fakat fonksiyon tetiklendiğinde eklenecek.
-//console.log(kadir.yas); , dediğimizde bize direkt olarak yas değerini veremez. önce emre.yasinihesapla(); yazılıp fonksiyon tetiklendikten sonra console.log(kadir.yas); yazınca yas değerini alabiliriz.
+//console.log(kadir.yas); , dediğimizde bize direkt olarak yas değerini veremez. önce kadir.yasinihesapla(); yazılıp fonksiyon tetiklendikten sonra console.log(kadir.yas); yazınca yas değerini alabiliriz.
 }
 }
 
