@@ -54,8 +54,8 @@ const diziIslemleri = function (dizi,islem) {
     }
    console.log(geciciDizi);
 }
-//diziIslemleri higher older fonksiyondur
-//higher older function : parametre olarak fonksiyon alan ve/veya return olarak fonksiyon döndüren fonksiyonlardır
+//diziIslemleri higher order fonksiyondur
+//higher order function : parametre olarak fonksiyon alan ve/veya return olarak fonksiyon döndüren fonksiyonlardır
 //ikiyleCarp, ikiyleBol callback fonksiyonlardır
 diziIslemleri(myDizi,ikiyleBol);
 diziIslemleri(myDizi,ikiyleCarp);
