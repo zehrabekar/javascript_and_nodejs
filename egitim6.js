@@ -1,4 +1,3 @@
-/*
 const diziyiKopyalaVeIkiyleCarp = function (dizi) {
     let geciciDizi = [];
     for(let i=0; i < dizi.length; i++) {
@@ -28,7 +27,7 @@ diziyiKopyalaVeIkiyleCarp(myDizi);
 diziyiKopyalaVeIkiyleBol(myDizi);
 diziyiKopyalaVeIkiEkle(myDizi);
 
-burada oluşturduğumuz fonksiyonlar fonksiyonun kod tekrarını önleme , kısayol oluşturma vb gibi amaçlarıyla çelişir
+/*burada oluşturduğumuz fonksiyonlar fonksiyonun kod tekrarını önleme , kısayol oluşturma vb gibi amaçlarıyla çelişir
 çünkü yukarıdaki fonksiyonlar ufak bir değişiklik haricinde aynı kod satırlarından oluşur.
 kod tekrarını önlemek, pratiklik vb. için daha genel bir fonksiyon oluşturmalıyız*/
 
@@ -54,9 +53,11 @@ const diziIslemleri = function (dizi,islem) {
     }
    console.log(geciciDizi);
 }
+
 //diziIslemleri higher order fonksiyondur
 //higher order function : parametre olarak fonksiyon alan ve/veya return olarak fonksiyon döndüren fonksiyonlardır
-//ikiyleCarp, ikiyleBol callback fonksiyonlardır
+//ikiyleCarp, ikiyleBol callback fonksiyonlardır 
+
 diziIslemleri(myDizi,ikiyleBol);
 diziIslemleri(myDizi,ikiyleCarp);
 diziIslemleri(myDizi,UcEkle);
@@ -86,3 +87,15 @@ function mesajGoster(mesaj) {
     console.log(mesaj);
 }
 
+//forEach
+
+diziAdi.forEach(function (value, index, array) {
+    
+    // Çalıştırılacak Kodlar
+ 
+});
+/*
+value : Bu parametre zorunludur ve dizi elemanlarının değerini tutar. 
+index : Bu parametre isteğe bağlıdır ve dizi elemanlarının indeks numarasını tutar.
+array : Bu parametre isteğe bağlıdır ve dizinin kendisini tutar.
+*/
