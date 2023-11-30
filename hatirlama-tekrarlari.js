@@ -32,14 +32,14 @@ console.log(gun); // cuma
 
 console.clear() // kendinden önce var olan tüm kodları siler, bu kodu yazdıktan sonra üstte console kısmına yazdırılan isim gun vb. gibi değerler artık görünmüyor.
 
-
+/*
 alert('merhaba'); //tarayıcı açıldığında küçük pencerede merhaba mesajı çıkar
 
 let rakam = 9;
 alert(rakam);
 
 let girilenSayi = prompt("bir sayı giriniz");
-console.log(girilenSayi); 
+console.log(girilenSayi); */
 //prompt : tarayıcı açıldığında gelen küçük pencere ile kullanıcıdan veri alırken kullanılır. 
 
 
@@ -52,3 +52,69 @@ number, string, boolean, undefined, null, symbol, BigInt
 object, array, functions
 */
 
+//if-else
+
+let yas1= 10;
+let yas2=12;
+let sonuc;
+
+if(yas1>yas2) {
+    console.log(yas1+yas2)
+}
+else {
+    console.log(yas1-yas2)
+} // sonuç -2
+
+// bu döngünün ternary if kullanılarak yapılması :
+
+sonuc = (yas1>yas2) ? (yas1+yas2) : (yas1-yas2)
+console.log("sonuc : " + sonuc)
+
+console.clear();
+
+//switch-case 
+let hangiGun=2;
+
+switch(hangiGun) {
+    case 1 :  console.log("pzt"); break; 
+    case 2 :  console.log("salı"); break; 
+    case 3 :  console.log("çrş"); break; 
+}
+console.log("döngüden çıkıldı");
+
+/*truthy-falsy :
+
+bu kavramlar bir değerin bir koşul ifadesinde boolean bir değere dönüştürüldüğünde nasıl davrandığını ifade eder.
+
+if (deger) {
+   Bu blok, "deger" true olarak değerlendirildiğinde çalışır.
+} else {
+   Bu blok, "deger" false olarak değerlendirildiğinde çalışır.
+}
+Burada deger ifadesi, bir koşul ifadesinde kullanıldığında, otomatik olarak bir boolean değere dönüşür. Eğer deger truthy bir değerse,
+if bloğu çalışır; eğer deger falsy bir değerse, else bloğu çalışır.
+
+-true, bir sayı (sıfır olmayan herhangi bir sayı), bir dize (boş olmayan herhangi bir dize) truthy değerlere örnektir.
+-false, null, undefined, 0, NaN, ve boş bir dize ("") falsy değerlere örnektir.
+*/
+//Örnekler :
+
+let deger=0;
+
+if(deger) {
+    console.log("bu true ifade")
+}
+else {
+    console.log("bu false ifade")
+}
+/* çıktı olarak bu false ifade yazdırdı çünkü deger değişkenine verdiğimiz değer 0 ve biz değişkenlere false, null, undefined, 0, NaN, ve 
+boş bir dize("") verirsek bize falsy değerler olduğundan if bloğu değil else bloğu çalışır.*/
+
+let adim = "zehra";
+if (adim) {
+    console.log("truthy")
+}
+else {
+    console.log("falsy")
+}
+//çıktı : truthy
