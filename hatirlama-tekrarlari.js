@@ -118,3 +118,77 @@ else {
     console.log("falsy")
 }
 //çıktı : truthy
+
+//for döngüsü
+// for(ilk atama; döngü çalıştırma şartı; her çalışma sonrası ne olacağı)
+
+for(let i=0, j=0; (i+j) < 20 ; i=i+5, j=j+2) {
+    console.log("döngü çalıştı") 
+    console.log("i değeri:" +i+ " j değeri:" + j + " i+j değeri : " +(i+j))
+ }
+/* burada i ve j adında iki deişken oluşturup her ikine 0 değeri verdik. sonra bu iki değişkenin toplamı 20den küçük olduğu durumlarda döngünün 
+çalışmasını sağladık (i+j <20 ) ve her çalışma sonrasında i'ye 5 j'ye 2 eklenerek yeni değerlerle işlem yapılmasını sağladık. */
+/* sonuç :
+döngü çalıştı
+i değeri:0 j değeri:0 i+j değeri : 0
+döngü çalıştı
+i değeri:5 j değeri:2 i+j değeri : 7
+döngü çalıştı
+i değeri:10 j değeri:4 i+j değeri : 14
+*/
+
+// tekrar sayısı belli olan durumlarda for döngüsü kullanırız
+// i değişkenini birden fazla kez tanımlayabiliyoruz çünkü tanımlanan i değişkeni o for döngüsü içindir. Döngü içinde tanımlanan değişken döngü dışında kullanılamaz.
+//döngü dışında tanımlanan değşken döngü içinde kullanılabilir
+
+console.clear();
+
+//while:
+let say = 5
+while (say < 15) {
+   console.log(" while döngüsü çalıştı")
+   say++
+}
+   console.log(" while döngüsü çalıştı")
+// say değişkeninin 15'ten küçük olduğu durumlarda döngü çalıştı ve ekrana 10 kez while döngüsü çalıştı yazdırdı.
+
+//do-while
+let yasimm =22
+do {
+   console.log("do-while döngüsü")
+} while(yasimm > 30);
+/*do-while döngüsündeki şart sağlanmasa bile döngü bir kez çalıştırılır. mesela burada yasimm değişkeni 30dan büyük olmadığı halde ekrana bir kez  
+"do-while döngüsü" yazdırıldı*/
+
+//break
+for(let i=0; i<20 ; i++) {
+    if (i==12) {
+       break;
+    }
+    console.log("break kullanımı")
+ }
+ /* break komutu döngünün çalışmasını durdurur. burada i değişkeninin 20den küçük olduğu durumlarda çalışması fakat i değişkeni 12ye eşit olduğunda döngünün durması istenmiş.
+ değişken 1 artarak 12 olduğunda döngü çalışmaı bırakmıs ve ekrana 12 kez break kullanımı yazdırılmıştır*/
+
+//iterasyon : İterasyon, bir döngünün bir kez çalıştırılması veya bir döngü içinde bir defa dönülmesi anlamına gelir.
+
+/*continue :
+bir döngünün içinde bulunduğu bloğun geri kalanını atlayarak döngünün bir sonraki iterasyonuna geçmesini sağlar. Bu, döngü içindeki belirli bir 
+durumu kontrol etmek ve sadece belirli koşullar altında bazı kodu çalıştırmak için kullanışlıdır.*/
+
+for (var i = 0; i < 5; i++) {
+    if (i === 2) {
+      // i'nin değeri 2 olduğunda bu iterasyonu atla
+      continue;
+    }
+    console.log(i);
+  }
+//çıktı: 0 1 3 4 
+
+ //return
+/*for içinde return kullanımı sadece fonksiyon içindeyse olur, yoksa illegal return statement hatası alınır*/
+/*for (let i=0; i<10; i++) {
+   if (i==5) { 
+      return
+   }
+ console.log("return kullanımı"+ i)} // üsteki hatayı verdi*/
