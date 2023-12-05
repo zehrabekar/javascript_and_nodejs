@@ -176,7 +176,7 @@ for(let i=0; i<20 ; i++) {
 bir döngünün içinde bulunduğu bloğun geri kalanını atlayarak döngünün bir sonraki iterasyonuna geçmesini sağlar. Bu, döngü içindeki belirli bir 
 durumu kontrol etmek ve sadece belirli koşullar altında bazı kodu çalıştırmak için kullanışlıdır.*/
 
-for (var i = 0; i < 5; i++) {
+for (let i = 0; i < 5; i++) {
     if (i === 2) {
       // i'nin değeri 2 olduğunda bu iterasyonu atla
       continue;
@@ -192,3 +192,19 @@ for (var i = 0; i < 5; i++) {
       return
    }
  console.log("return kullanımı"+ i)} // üsteki hatayı verdi*/
+
+//fonksiyonlar
+//fonksiyon tanımlama : function fonksiyonAdı
+function selamver() {
+    console.log("Merhaba")
+}
+// fonskiyon çağırma :
+selamver(); // consoleda merhaba yazdı
+
+function sayilariCarp (sayi1,sayi2) {
+    console.log("sayıların çarpımı : " + (sayi1*sayi2));
+    return sayi1*sayi2
+}
+
+sayilariCarp(2,3);
+
