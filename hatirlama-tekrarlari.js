@@ -208,3 +208,30 @@ function sayilariCarp (sayi1,sayi2) {
 
 sayilariCarp(2,3);
 
+console.clear();
+
+// global ve local scope, shadowed variable
+/*
+global scope : bütün dosya boyunca bilinen değişkenlerdir.
+local scope : tanımı bir döngü ya da fonksion içinde yapılan , tüm dosya boyunca bilinmeyen değişkenlerdir.
+shadowed variable : scopeları farklı aynı isimli değişkenlere denir. 
+örnekler:
+*/
+let ay = "aralik"; // global scope
+
+function renkler() {
+    let renk = "mor"; // local scope. sadece fonksiyon içinde var olan bir değişken
+    console.log(renk);
+}
+renkler(); // fonksiyonu çağırınca mor çıktısını verdi.
+ // console.log(renk); -> fonksiyon dışında renk değişkenini yazdıramadım, renk is not defined hatası verdi.
+
+merhaba();
+function merhaba() {
+    let yas3 = 22;
+    console.log("fonksiyon içinde yaş : " + yas3); //22
+}
+let yas3 = 12;
+console.log("fonksiyon dışında yaş : " + yas3); // 12
+
+// aynı isimli değişkeni farklı scopelarda tanımladığım için problem çıkmadı. (yas3 -> shadowed variable)
