@@ -272,3 +272,30 @@ console.log(sayilariTopla(5,6));
 const sayilarinToplami = (s1,s2) => s1 + s2;
 
 console.log(sayilarinToplami(3,5));
+
+console.clear();
+
+//array
+
+//dizi oluşturma
+let renkler_ = ["sarı","yeşil","mavi","mor"];
+console.log("renkler :" + renkler_); // sari,yeşil,mavi,mor
+
+//dizizde 2. indexteki elemana ulaşma
+console.log(renkler_[2]); // mavi
+
+// diziye yeni eleman ekleme 
+renkler_[4] = "pembe";
+console.log(renkler_[4]); // pembe
+
+// 1. indexteki elemanı değiştirme
+renkler_[1]="beyaz";
+console.log("yeni renkler_ dizisinin elemanları : " + renkler_); // yeni renkler_ dizisinin elemanları : sarı,beyaz,mavi,mor,pembe
+
+//dizideki eleman sayısını bulma 
+console.log(renkler_.length); // 5
+
+// for döngüsü ile dizideki elemanları ekrana tek tek yazdırma
+for( let i=0; i< renkler_.length; i++) {
+    console.log(renkler_[i]);
+}; // alt alta sarı beyaz mavi mor pembe yazdırdı
