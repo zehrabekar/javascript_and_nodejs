@@ -235,3 +235,40 @@ let yas3 = 12;
 console.log("fonksiyon dışında yaş : " + yas3); // 12
 
 // aynı isimli değişkeni farklı scopelarda tanımladığım için problem çıkmadı. (yas3 -> shadowed variable)
+
+// fat arrow kullanımı 
+// normal fonksiyon oluşturma
+function selamVer() {
+    console.log("selam");
+};
+selamVer(); //selam
+
+// fonksiyonu değişkene atama :
+let merhabaDegisken = function merhaba(){
+    console.log("değişkene atanmış fonksiyon ile merhaba");
+}
+console.log(merhabaDegisken);
+/* çıktısı : 
+ƒ merhaba(){
+    console.log("değişkene atanmış fonksiyon ile merhaba");
+}*/
+
+merhabaDegisken(); // değişkene atanmış fonksiyon ile merhaba
+
+// fat arrow ile yazım :
+const merhabaa = () => {
+    console.log("merhabaa fat arrow");
+}
+merhabaa(); //merhabaa fat arrow
+
+// parametre alan geriye değer döndüren fonksiyonlara örnek :
+const sayilariTopla= function (s1,s2) {
+    return s1 + s2 ;
+}
+console.log(sayilariTopla(5,6));
+
+//fat arrow ile :
+
+const sayilarinToplami = (s1,s2) => s1 + s2;
+
+console.log(sayilarinToplami(3,5));
