@@ -299,3 +299,67 @@ console.log(renkler_.length); // 5
 for( let i=0; i< renkler_.length; i++) {
     console.log(renkler_[i]);
 }; // alt alta sarı beyaz mavi mor pembe yazdırdı
+
+//For/Of döngüsü ile diziler üzerindeki tüm elemanlara kolaylıkla ulaşabiliriz.
+
+for (let oankidizielemani of renkler_) {
+    console.log(oankidizielemani);
+}
+// çıktı olarak alt alta dizi elemanlarını verdi.
+
+console.clear();
+
+//object
+let ben = {
+    adi : "zehra",
+    soyAdi : "bekar",
+    dogumYili : 2001,
+    sevdigiRenkler : ["yeşil", "pembe"],
+    yasHesapla : function (dogumYili) {
+        return 2023 - dogumYili;
+    }
+    
+};
+
+console.log(ben);
+console.log(ben.adi);
+console.log(ben["soyAdi"]);
+
+let yasi = ben.yasHesapla(2001);
+console.log(yasi); //22
+console.log(ben.yasHesapla(2001)); //22
+
+let ayse = {
+    ad : "ayşe",
+    gozRengi : "kahverengi",
+    dogumYili : 1999,
+    yasiniHesapla : function() {
+        return 2023 - this.dogumYili;
+        /*burada fonksiyona parametre olarak dogumYilini yazmadan kullanmaya kalktığımızda dugumYilini tanımadığı için hata veriyor bu yüzden
+        oluşturduğumuz nesnedeki istediğimiz o alanı kullanabilmek için this kelimesini kullanırız */
+    }
+}
+
+let yas = ayse.yasiniHesapla(2001);
+console.log("aysenin yasi : " + yas);
+
+let fatma = {
+    adi : "fatma",
+    boy : 170,
+    dogumYili : 1995,
+    yasiHesapla : function () {
+        this.yas = 2023 - this.dogumYili;
+        /*normalde bu nesne içinde yas diye bir alan yok fakat fonksiyon tetiklendiği an yas adlı key değeri ekleniyor*/
+    }
+};
+// yas değerine ulaşmak için önce fonksiyon çalışmalı :
+fatma.yasiHesapla();
+// fonksiyon tetiklendikten sonra yas değerine erişebiliriz
+console.log("fatmanın yaşı : " + fatma.yas);
+
+// bu objeleri dizi içinde saklayabiliriz :
+let kisiler = [ben, ayse , fatma]
+console.log(kisiler[1].ad); // ayşe
+
+ben.soyAdi = "bekarr";
+console.log(ben.soyAdi); // bekarr
