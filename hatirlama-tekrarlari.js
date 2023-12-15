@@ -406,3 +406,10 @@ renk$.push("sarı");
 
 console.log(renk$,yenirenk); // (3) ['gri', 'pembe', 'sarı'] (2) ['gri', 'pembe'] sonucunu verdi
 
+//instance of
+console.log(renk$ instanceof Array); // true (renk$ bir dizi mi? evet dizi.)
+console.log(renk$ instanceof Object);  // true
+console.log(renk$ instanceof Function); // false 
+
+// diziler hem arrayin hem de objectin bir parçasıdır
+// fonksiyonlar da objedir
