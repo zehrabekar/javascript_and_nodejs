@@ -363,3 +363,46 @@ console.log(kisiler[1].ad); // ayşe
 
 ben.soyAdi = "bekarr";
 console.log(ben.soyAdi); // bekarr
+
+console.clear();
+
+// primitive ve referans tipler 
+//primitiv tipler:
+let yas_ = 10;
+let yeniYas = yas_;
+
+yas_ = 15;
+console.log(yas_ , yeniYas); // 15 10 yazdırdı
+
+let $isim = "zehra";
+let yeniIsim = $isim;
+
+$isim = "Zehra";
+console.log($isim, yeniIsim); // Zehra zehra
+
+//referans tipler (diziler, nesneler):
+
+let $renk = ["pembe", "yeşil"];
+let yeniRenk = $renk;
+
+$renk.push("mavi");
+console.log($renk , yeniRenk); //(3) ['pembe', 'yeşil', 'mavi'] (3) ['pembe', 'yeşil', 'mavi'] yazdırdı
+
+/*
+yukarıda yapılan örneklerde primitive tiplerde yeniYas değişenine yas_ değişkenini atadığımızda yas_ değişkeninin değerini alıyor fakat referans
+tiplilerde yeniRenk adlı diziye $renk dizisini atadığımızda o dizinin değerlerini değil dizinin referans adresini atıyor.
+$renk değişkeni pembe ve yeşil değerlerini değil bellekte o yapının tutulduğu yerin adresini tutuyor, bu yüzden yeniRenk değişkeni de aynı adresi
+tutar.
+
+$renk dizisi ile ilgili tekrar $renk =["pembe","yeşil"]; diye yeniden değer versem (değerlerin aynı olması önemli değil) bu sefer farklı bir adres
+oluşacağı için yeniRenk ile $renk dizileri aynı sonucu vermezler.
+Örnek :
+*/
+let renk$ = ["gri","pembe"];
+let yenirenk= renk$;
+
+renk$=["gri","pembe"];
+renk$.push("sarı");
+
+console.log(renk$,yenirenk); // (3) ['gri', 'pembe', 'sarı'] (2) ['gri', 'pembe'] sonucunu verdi
+
