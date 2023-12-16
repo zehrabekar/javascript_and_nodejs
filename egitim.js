@@ -16,18 +16,18 @@ let $sayi =456
 let sayi11 = 458
 let benim_kimlik_numaram = 123456
 
-let sayi2;
-console.log(sayi2);
-// bu şekilde sayi2'ye değer vermeden yazdırma işlemi yaptırdığımızda undefined olarak göründü
+let sayi10;
+console.log(sayi10);
+// bu şekilde sayi10'a değer vermeden yazdırma işlemi yaptırdığımızda undefined olarak göründü
 
-sayi2=50;
-console.log(sayi2);
-//şimdi sayi2 ile ekranda 50 değeri göründü
+sayi10=50;
+console.log(sayi10);
+//şimdi sayi10 ile ekranda 50 değeri göründü
 
-sayi2=60;
-sayi2=70;
-console.log(sayi2);
-// sayi2'ye iki değer verdim, ekranda verilen son değer göründü
+sayi10=60;
+sayi10=70;
+console.log(sayi10);
+// sayi10'a iki değer verdim, ekranda verilen son değer göründü
 
 // const ile değişken tanımladığımda o değişkene verdiğimiz değer sabit kalır ve sayi2de yaptığım gibi sonradan eklediğim değer kabul edilmez
 /*const piSayisi = 3.14
