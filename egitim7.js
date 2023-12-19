@@ -86,6 +86,12 @@ function mesajGoster(mesaj) {
 console.clear();
 
 // foeEach array helper fonksiyonu , kendi forEach fonksiyonumuzu yazalım
+
+/* parametreler forEach (element , index , array)
+element : Kullanımı zorunludur. İşlemden geçen elemanın değeridir.
+index : Kullanımı isteğe ve senaryoya bağlıdır. İşlemden geçen elemanın indis değeri
+array : Kullanımı isteğe ve senaryoya bağlıdır. İşlemden geçen elemanın ait olduğu dizi
+*/
 let sayilar =[1,2,3,4,5,6];
 for (let i= 0 ; i<sayilar.length; i++ ){
     console.log(sayilar[i]);
