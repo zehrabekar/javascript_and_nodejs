@@ -82,3 +82,66 @@ adimiSoyle("zehra","bekar",mesajGoster); // MERHABA ZEHRA BEKAR
 function mesajGoster(mesaj) {
     console.log(mesaj);
 }
+
+console.clear();
+
+// foeEach array helper fonksiyonu , kendi forEach fonksiyonumuzu yazalım
+let sayilar =[1,2,3,4,5,6];
+for (let i= 0 ; i<sayilar.length; i++ ){
+    console.log(sayilar[i]);
+};
+
+console.log("**************");
+
+for(let item of sayilar) { 
+    console.log(item);
+}   
+
+console.log("**************");
+
+sayilar.forEach(function(sayi) {
+    console.log(sayi);
+});
+console.log("**************");
+/* burada foreach kullanıldığında dizideki her bir eleman için fonksiyon tetiklenir. bu fonksiyona o an okunan sayi parametre olarak gelir ve 
+okunan o sayi ekrana yazdırılır.
+çıktı olarak alt alta sıralanmış şekilde 1 2 3 4 5 6 gelir
+*/
+// aynı zamanda indexini de yazdırmak istersek :
+sayilar.forEach(function(sayi,i) {
+    console.log(sayi,i);
+});
+console.log("**************");
+/*burada foreach bir fonksiyondur ve parametre olarak bir fonksiyon almış 
+foreach bir higher order fonksiyon
+(function(sayi,i) {
+    console.log(sayi,i);
+}); kısmı ise callback fonksiyondur
+ */
+
+function IkiParametreAlanFonksiyon(sayi,index){
+    console.log("iki parametre alan fonksiyon ile yazdır : " + sayi,index);
+};
+sayilar.forEach(IkiParametreAlanFonksiyon);// sonuç olarak yine dizi elemanlarını ve index numaralarını verdix
+
+// kendi forEach fonksiyonumuz :
+function diziyiYazdir(dizi,callback) {
+
+    for (let i =0; i<dizi.length; i++) {
+       // console.log(dizi[i],i); yerine :
+       callback(dizi[i],i); // yazacağız
+    }
+
+}
+
+diziyiYazdir (sayilar, function(deger,index){
+console.log("değer : " + deger + " index no : "+ index);
+}); 
+/*çıktı :
+değer : 1 index no : 0
+ değer : 2 index no : 1
+ değer : 3 index no : 2
+ değer : 4 index no : 3
+ değer : 5 index no : 4
+ değer : 6 index no : 5
+ */
