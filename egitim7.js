@@ -128,7 +128,7 @@ foreach bir higher order fonksiyon
 function IkiParametreAlanFonksiyon(sayi,index){
     console.log("iki parametre alan fonksiyon ile yazdır : " + sayi,index);
 };
-sayilar.forEach(IkiParametreAlanFonksiyon);// sonuç olarak yine dizi elemanlarını ve index numaralarını verdix
+sayilar.forEach(IkiParametreAlanFonksiyon);// sonuç olarak yine dizi elemanlarını ve index numaralarını verdi.
 
 // kendi forEach fonksiyonumuz :
 function diziyiYazdir(dizi,callback) {
