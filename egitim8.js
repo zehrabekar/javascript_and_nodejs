@@ -59,3 +59,80 @@ const islemdenSonraOlusanYeniDizi = kendiMapYapim(sayilar,function(sayi){
    return sayi * 5;
 });
  console.log(islemdenSonraOlusanYeniDizi); //(6) [5, 10, 15, 20, 25, 30]
+
+console.clear();
+
+// filter metodu :  bir dizi üzerinde belirli bir koşulu sağlayan elemanları filtrelemek için kullanılır. 
+//filter metodunu bilmeden önce diziden türü meyve olanları bulmak için :
+const yiyecekler = [
+    { adi: 'Elma', turu: 'meyve' },
+    { adi: 'Havuç', turu: 'sebze' },
+    { adi: 'Muz', turu: 'meyve' },
+    { adi: 'Domates', turu: 'sebze' },
+    { adi: 'Çilek', turu: 'meyve' },
+  ];
+  
+  function meyveleriBul(){
+    let meyvelerDizisi = [];
+    for(let i=0; i<yiyecekler.length; i++){
+        if(yiyecekler[i].turu==="meyve"){
+            meyvelerDizisi.push(yiyecekler[i]);
+        }
+    }
+
+    return meyvelerDizisi;
+  };
+
+  console.log(meyveleriBul());
+  /*
+  (3) [{…}, {…}, {…}]
+0: {adi: 'Elma', turu: 'meyve'}
+1: {adi: 'Muz', turu: 'meyve'}
+2: {adi: 'Çilek', turu: 'meyve'}
+length: 3
+[[Prototype]]: Array(0) */
+
+// filter metodu ile :
+
+const sebzeler = yiyecekler.filter(function(yiyecek){
+    return yiyecek.turu === "sebze";
+});
+console.log(sebzeler);
+/*
+(2) [{…}, {…}]
+0: {adi: 'Havuç', turu: 'sebze'}
+1: {adi: 'Domates', turu: 'sebze'
+ */
+
+const rakamlar =[1,2,3,4,5,6,7,8,9];
+
+const buyukRakamlar = rakamlar.filter(function(rakam){
+    return rakam > 5 ;
+})
+console.log(buyukRakamlar); // (4) [6, 7, 8, 9]
+
+// kendi filter metodumuzu yazalım :
+function kendiFilterYapim(dizi, filtreSartlari){
+    const filtrelenmisDizi = [];
+    for(i=0; i<dizi.length; i++){
+        const sonuc = filtreSartlari(dizi[i]);
+        if(sonuc){
+            filtrelenmisDizi.push(dizi[i]);
+        }
+    }
+
+    return filtrelenmisDizi;
+}
+function filtre(yiyecek){
+    return yiyecek.turu === "meyve";
+}
+
+const meyveler =kendiFilterYapim(yiyecekler, filtre);
+
+console.log(meyveler);
+/*
+(3) [{…}, {…}, {…}]
+0: {adi: 'Elma', turu: 'meyve'}
+1: {adi: 'Muz', turu: 'meyve'}
+2: {adi: 'Çilek', turu: 'meyve'}
+ */
