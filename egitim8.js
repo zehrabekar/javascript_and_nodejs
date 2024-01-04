@@ -115,7 +115,7 @@ console.log(buyukRakamlar); // (4) [6, 7, 8, 9]
 function kendiFilterYapim(dizi, filtreSartlari){
     const filtrelenmisDizi = [];
     for(i=0; i<dizi.length; i++){
-        const sonuc = filtreSartlari(dizi[i]);
+        const sonuc = filtreSartlari(dizi[i], "meyve");
         if(sonuc){
             filtrelenmisDizi.push(dizi[i]);
         }
@@ -123,8 +123,9 @@ function kendiFilterYapim(dizi, filtreSartlari){
 
     return filtrelenmisDizi;
 }
-function filtre(yiyecek){
-    return yiyecek.turu === "meyve";
+
+function filtre(yiyecek,sart){
+    return yiyecek.turu === sart;
 }
 
 const meyveler =kendiFilterYapim(yiyecekler, filtre);
@@ -136,3 +137,72 @@ console.log(meyveler);
 1: {adi: 'Muz', turu: 'meyve'}
 2: {adi: 'Çilek', turu: 'meyve'}
  */
+
+/*kendi filter yapimizi oluştururken parametre olarak bir dizi ve bir de filtreSartlari adında bir fonksiyon geçtik. daha sonra filtrelenmiş
+sonucların bir dizide toplanması için filtrelenmisDizi adında boş bir dizi oluşturduk. sonra for döngüsü ile dizideki elemanları tek tek gezdik
+sonuc isimli bir değişken oluşturduk ve bu değişkende şartın sonucunu yani doğru yanlış olma durumunu (yukarıdaki örnek için sebze olma şartı)
+tuttuk ve if ile sonuc doğruysa kontrol edilen o anki elemanın filtrelenmisDiziye eklenmesini sağladık.
+
+daha sonra yukarıdaki yiyecekler dizisi çin bir örnek yaptık ve bu dizideki meyveleri seçmek için :
+const meyveler =kendiFilterYapim(yiyecekler, filtre); yazdık.
+yiyecekler : dizi ismi
+filtre : filtreSartlari isimli parametre yerine yazılan fonksiyon. bu fonksiyon filtrelemek için gerekli şarta uyup uymadığını kontrol eder 
+mesela yukarıda sonuc değişkenindeki "sebze" filtre fonksiyonundaki şarta denk geliyor.
+*/
+
+/*farklı kullanımı :
+function kendiFilterYapim(dizi, filtreSartlari){
+    const filtrelenmisDizi = [];
+    for(i=0; i<dizi.length; i++){
+        const sonuc = filtreSartlari(dizi[i],);
+        if(sonuc){
+            filtrelenmisDizi.push(dizi[i]);
+        }
+    }
+
+    return filtrelenmisDizi;
+}
+
+function filtre(yiyecek,sart){
+    return yiyecek.turu === sart;
+}
+
+const meyveler =kendiFilterYapim(yiyecekler, function(yiyecek){
+    return yiyecek.turu === "meyve";
+});
+
+console.log(meyveler);
+
+buradaki farklılık kendifilteryapimda filtre adındaki fonksiyon yerine isimsiz bir fonksiyon yazıp sartı bu şekilde de kontrol edebiliriz.
+ */
+
+
+// kendi filter yapıma kendi örneğim :
+const renkler = [
+    {renk : "açık mavi", ton : "açık"},
+    {renk : "açık pembe", ton : "açık"},
+    {renk : "koyu mavi", ton : "koyu"},
+    {renk : "koyu pembe", ton : "koyu"},
+];
+
+function benimFilterYapim(dizi, sartlar){
+    let filtrelenmisRenkDizisi = [];
+    for (let i=0; i< dizi.length; i++){
+        const renk = sartlar(dizi[i]);
+        if (renk){
+            filtrelenmisRenkDizisi.push(dizi[i]);
+        }
+    }
+    return filtrelenmisRenkDizisi;
+};
+
+const acikRenkler = benimFilterYapim(renkler, function(renk){
+    return renk.ton === "açık";
+});
+
+console.log(acikRenkler);
+/*
+0: {renk: 'açık mavi', ton: 'açık'}
+1: {renk: 'açık pembe', ton: 'açık'}
+length: 2
+[[Prototype]]: Array(0) */
