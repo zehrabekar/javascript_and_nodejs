@@ -96,3 +96,52 @@ function kendiSome(dizi, kontrolFonksiyon) {
   });
   
   console.log("5ten büyük mü :" + buyukMu ); // 5ten büyük mü :false
+
+  console.clear();
+
+//reduce(azaltmak) metodu :  bir dizi (array) üzerinde döngü yaparak her elemanı birleştirmek, toplamak veya başka bir şekilde işlemek için kullanılan bir dizi metodudur.
+/*
+sayilar_.reduce(function(accumulator, currentValue, index, array){
+  Akümülatör üzerinde belirli bir işlem yapılır
+ return yeniAkumulatorDegeri;
+},initialValue);
+
+akümülatör :reduce işlemi sırasında bir önceki adımda dönüşen değeri temsil eder. Previous value ile aynı şeydir.
+*/
+const sayilar_ =[1,2,3,4,5,6];
+
+// reduce'den önce dizideki elemanların toplamını bulma:
+function toplaminiBul(){
+  let toplam =0;
+  for(let i=0; i<sayilar_.length; i++){
+    toplam = toplam + sayilar_[i];
+  }
+  console.log(toplam);
+};
+toplaminiBul(); // 21
+
+//reduce ile aynı işlem :
+const reduceIleToplam = sayilar_.reduce(function(toplam,currentValue,index){
+  return toplam = toplam + currentValue;
+},0);
+console.log(reduceIleToplam); // 21
+/*buradaki çalışma mantığı : initial değer olarak girilen 0 ile önce dizideki 1 toplanır ve sonuc olan 1 alınır. daha sonra 1 ile ikinci değer 2
+toplanır ve 3 alınır derken tüm elemanlar bitene kadar işlem devam eder ve 21 sonucu elde edilir.
+toplam buradaki previousValue'e (ya da accumulator), currentValue o an işlem yapılan elemana index ise initial sayı ile ilk elemanı 
+topladığımızda 0, çıkan değer ile ikinci elemanı topladığımızda 1 vs şeklinde ilerler.*/
+
+//map kullanımı hatırlatma :
+const yeniDizi = sayilar_.map(function(sayi){
+  return sayi *2;
+});
+
+console.log(yeniDizi); // [2, 4, 6, 8, 10, 12]
+
+//reduce kullanarak aynı yapıyı oluşturma :
+const reduceIleYeniDizi = sayilar_.reduce(function(dizininOncekiHali,oAnkiSayi){
+    dizininOncekiHali.push(oAnkiSayi*2);
+    return dizininOncekiHali;
+},[]);
+console.log(reduceIleYeniDizi);// [2, 4, 6, 8, 10, 12]
+/* burada map ile aldığımız sonuca ulaşmak için initial değer olarak boş bir dizi verdik. sonrasında normalde reduce ile tek bir sonuc almamak
+map gibi dizi halinde yapmak için işlem yaptığımız elemanların yeni değerini push ile diziye ekledik*/
