@@ -145,3 +145,39 @@ const reduceIleYeniDizi = sayilar_.reduce(function(dizininOncekiHali,oAnkiSayi){
 console.log(reduceIleYeniDizi);// [2, 4, 6, 8, 10, 12]
 /* burada map ile aldığımız sonuca ulaşmak için initial değer olarak boş bir dizi verdik. sonrasında normalde reduce ile tek bir sonuc almamak
 map gibi dizi halinde yapmak için işlem yaptığımız elemanların yeni değerini push ile diziye ekledik*/
+
+//filter fonksiyonun hatırlatma :
+const filtrelenmisDizi = sayilar_.filter(function(sayi,index){
+  return sayi > 3;
+});
+console.log(filtrelenmisDizi); //(3) [4, 5, 6]
+
+//reduce kullanarak aynı yapıyı oluşturma:
+const reduceIleFiltrelenmisDizi = sayilar_.reduce(function(pre,sayi,index){
+  if (sayi > 3){
+    pre.push(sayi);
+  }
+  return pre;
+}, []);
+// initial value olarak [] göndermemizin sebebi filter fonksiyonunda aranan değer bulunamazsa geriye [] değer döndürülmesi.
+console.log(reduceIleFiltrelenmisDizi); //(3) [4, 5, 6]
+/* burada gerçekleşen olay sayilar_ dizisindeki elemanlar ilk değerden başlayarak şarta uyup uymadığı kontrol edildikten sonra uyan değerler 
+pre.push(sayi) kodu ile [] içine eklenir . burada pre değeri yani ilk durumda [] değerine sayi değeri yani ilk durumda uyan eleman 4 push ile
+eklenir ve [4] olur. daha sonra 5 ve 6 değerleri de kontrol edildikten sonra şarta uyduğu için sonuc [4,5,6] olur. */
+
+// find fonksiyonun hatırlatma :
+const bulunanEleman = sayilar_.find(function(sayi,index){
+  return sayi === 2;
+});
+console.log(bulunanEleman); // 2
+
+// reduce ile find yapısını oluşturma :
+const reduceIleBulunanEleman = sayilar_.reduce(function(pre,sayi,index){
+  if(sayi === 2){
+    return sayi;
+  }else {
+    return pre;
+  }
+},undefined);
+console.log(reduceIleBulunanEleman); // 2
+//find metodunda eleman bulunamazsa undefined yazdırdığı için initial value olarak undefined yazdık
