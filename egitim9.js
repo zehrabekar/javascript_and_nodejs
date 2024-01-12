@@ -181,3 +181,47 @@ const reduceIleBulunanEleman = sayilar_.reduce(function(pre,sayi,index){
 },undefined);
 console.log(reduceIleBulunanEleman); // 2
 //find metodunda eleman bulunamazsa undefined yazdırdığı için initial value olarak undefined yazdık
+
+console.clear();
+
+// reduce ile ilgili soru ve çözümü 
+
+function parantezlerDengeliMi(metin){
+    const dizi = metin.split('');
+
+    const sonuc = dizi.reduce(function(pre, karakter){
+      if(pre < 0){
+        return pre;
+      }
+
+      if(karakter === "("){
+        return ++pre;
+      }
+
+      if (karakter === ")"){
+        return --pre;
+      }
+
+      return pre;
+    },0);
+
+    if (!sonuc){
+      console.log(metin + "dengeli bir yapıdadır");
+    }else{
+      console.log(metin + "dengesiz bir yapıdadır");
+    }
+
+  };
+
+  parantezlerDengeliMi("())"); // dengesiz bir yapıdadır
+/*
+burada parantezlerDengeliMi fonksiyonu ile metin yerine yazılan açma ve kapama parantez sayılarının eşit olup olmadığını ve düzgün yazılışını 
+kontrol ettik.
+dengeli parantez örnekleri (), ((())), (())
+dengesiz parantez örnekleri : )(, ()), )(())
+ilk olarak metin yerine verilen değeri karakterlere ayırdık.(split)
+sonra sayı olarak dengeli olsa dahi yer olarak dengeli olmadığı için )( bu parantezi dengeli kabul etmemek için  if(pre < 0){return pre;} 
+yazdık. bu sayede ilk kapatma parantezi yazılmışsa -1 değeri alacak ve dengesiz kabul edilecek.
+sonra her "(" parantezi için +1, her ")" parantezi için -1 değer almasını sağladık.
+sonuç 0 olduğunda dengeli, 0'dan farklı bir değer olduğunda dengesiz yazdırdık.
+ */
