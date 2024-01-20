@@ -182,8 +182,6 @@ const reduceIleBulunanEleman = sayilar_.reduce(function(pre,sayi,index){
 console.log(reduceIleBulunanEleman); // 2
 //find metodunda eleman bulunamazsa undefined yazdırdığı için initial value olarak undefined yazdık
 
-console.clear();
-
 // reduce ile ilgili soru ve çözümü 
 
 function parantezlerDengeliMi(metin){
@@ -213,7 +211,7 @@ function parantezlerDengeliMi(metin){
 
   };
 
-  parantezlerDengeliMi("())"); // dengesiz bir yapıdadır
+  parantezlerDengeliMi("()) "); // dengesiz bir yapıdadır
 /*
 burada parantezlerDengeliMi fonksiyonu ile metin yerine yazılan açma ve kapama parantez sayılarının eşit olup olmadığını ve düzgün yazılışını 
 kontrol ettik.
@@ -225,3 +223,58 @@ yazdık. bu sayede ilk kapatma parantezi yazılmışsa -1 değeri alacak ve deng
 sonra her "(" parantezi için +1, her ")" parantezi için -1 değer almasını sağladık.
 sonuç 0 olduğunda dengeli, 0'dan farklı bir değer olduğunda dengesiz yazdırdık.
  */
+console.clear();
+
+/*rakamlar dizisindeki tek rakamları filter kullanarak seç ve başka bir dizi oluştur, daha sonra bu sayıların map ile karesini al ve yeni dizi 
+oluştur, karesi 10dan büyük sayıları reduce ile topla.*/
+let rakamlar =[1,2,3,4,5,6,7,8,9];
+
+let tekElemanlar = rakamlar.filter(function(sayi){
+    if(sayi % 2 != 0){
+      return sayi
+    };
+});
+
+console.log(tekElemanlar); //  [1, 3, 5, 7, 9]
+
+let karesiAlinanSayilar = tekElemanlar.map(function(sayi){
+    return sayi*sayi;
+});
+
+console.log(karesiAlinanSayilar); // [1, 9, 25, 49, 81]
+
+let sayilarinToplami = karesiAlinanSayilar.reduce(function(pre,currentValue){
+     if (currentValue > 10) {
+        return pre + currentValue;
+    } else {
+        return pre;
+    }
+},0);
+
+console.log(sayilarinToplami); // 155
+
+// hocanın çözümü: 
+
+function sonucuBul(rakamlar){
+    const tekSayilar = rakamlar.filter(function(sayi){
+      return sayi % 2 !==0;
+    });
+console.log(tekSayilar); // [1, 3, 5, 7, 9]
+
+    const sayilarinKareleri = tekSayilar.map(function(sayi){
+      return sayi*sayi;
+    });
+console.log(sayilarinKareleri); //[1, 9, 25, 49, 81]
+
+    const toplam = sayilarinKareleri.reduce(function(genelToplam,sayi){
+      if(sayi > 10){
+        return genelToplam = genelToplam + sayi;
+      }else {
+        return genelToplam;
+      }
+    },0);
+
+    return toplam;
+}
+
+console.log(sonucuBul(rakamlar)); // 155
