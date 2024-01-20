@@ -278,3 +278,18 @@ console.log(sayilarinKareleri); //[1, 9, 25, 49, 81]
 }
 
 console.log(sonucuBul(rakamlar)); // 155
+
+// çözümü daha az satır ile yazmak için arrow function kullanımı ve fonksiyonların zincirlenerek yazılması :
+function kisaVersiyon(rakamlar) {
+    return rakamlar.filter(sayi => sayi%2 !== 0)
+                   .map(sayi => sayi*sayi)
+                   .reduce((genelToplam,sayi) => sayi > 10 ? genelToplam += sayi : genelToplam, 0);
+}
+console.log(kisaVersiyon(rakamlar)); // 155 
+/* normalde filter map reduce metotlarının kullanımı sonucu bir dizi döndürülür. uzun versiyonda oluşan bu dizilere hep isim atadık burada ise
+örnek olarak filter metotu kullanımı sonucunda oluşacak diziye isim atamak yerine bu metodun sonuna bir nokta koyduk ve map metodunu devamına 
+yazdık böylece filter metodunun sonucunda oluşacak olan dizi + nokta + map metodu demek filter metodu sonucu oluşacak diziye map metodunun 
+uygulanması demek oldu. aynı şekilde reduce metodunu da yaptık. ikinci adım olarak arrow function kullandık. metodlardaki function kelimelerini
+kaldırdık => ekledik.bir parametre olduğu için sayi parametresindeki parantezi kaldırdık. tek bir return ifadesi olduğu için süslü parantezleri
+ve return kelimesini kaldırdık.reduce metodunda birden fazla parametre olduğu için parantez kaldı. sonra if döngüsü için de kısaltma yaptık. ? = ise demek , : = değilse demektir. 
+*/
