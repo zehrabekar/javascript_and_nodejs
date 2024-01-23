@@ -92,3 +92,77 @@ console.log(kisiler);
 4: {id: 15, isim: 'ayşegül', yas: 32}
 5: {id: 16, isim: 'ayşen', yas: 52}
 6: {id: 12, isim: 'ayşenur', yas: 22}*/ 
+console.clear();
+
+/*spread operatörü: bir dizi veya nesnenin elemanlarını veya özelliklerini başka bir dizi veya nesneye eklemek veya birleştirmek için kullanılan
+bir özelliktir.  
+dizileri sıralarken kullandığımız sort metodunda ana dizi bozulur. ana dizinin bozulmasını istemediğimiz durumlarda ana dizideki elemanları 
+başka bir diziye kopyalamak için spread yöntemini kullanabiliriz.*/
+
+const adlar = ["hasan", "ayşe", "ahmet", "zehra"];
+
+/* for döngüsü ile dizi kopyalama :
+let kopya = [];
+for (let ad of adlar){
+    kopya.push(ad);
+};
+kopya.sort();
+
+console.log("kopyalanmış dizi : " + kopya); 
+kopyalanmış dizi : ahmet,ayşe,hasan,zehra
+console.log("ad dizisi : " + adlar); 
+ad dizisi : hasan,ayşe,ahmet,zehra 
+ana dizi bozulmadan dizideki elemanlar sıralandı */
+
+//kopya = adlar; yazarak kopyalamaya çalışırsak burada değerleri değil referans adresini atadığımız için değişiklikler her iki dizide de olur.
+
+// kopya = Array.from(adlar); isimler dizisindeki elemanlar ile kopya dizisini oluşturur. dizi kopyalarken bu yöntem de kullanılabilir.
+
+// spread operator ile kopyalama :
+kopya = [...adlar];
+// adlar dizisindeki elemanları kopya dizisine ggönderir ve yeni dizi oluşturur.
+kopya.sort();
+console.log(kopya);// (4) ['ahmet', 'ayşe', 'hasan', 'zehra']. önce adlar dizisindeki elemanlar kopya dizisine kopyalandı sonra sort ile sıralandı
+console.log(adlar);//(4) ['hasan', 'ayşe', 'ahmet', 'zehra']. adlar dizisi bozulmadı, sort ile sıralanmadı
+
+const kisi = ["ayşe","fatma","merve"];
+const rakamlar = [1,2,3,4];
+
+kopyalanmisDizi = [...kisi, ...kisi];
+console.log(kopyalanmisDizi); //['ayşe', 'fatma', 'merve', 'ayşe', 'fatma', 'merve']
+// burada kisi dizisindeki elemanlar kopyalanmisDizi dizisine iki kez kopyalandı
+
+kopyaDizi = [...adlar, ...rakamlar];
+console.log(kopyaDizi);// ['hasan', 'ayşe', 'ahmet', 'zehra', 1, 2, 3, 4]
+// iki dizinin elemanları kopyaDizi'de birleştirildi ve yeni dizi oluştu
+
+const adim = "zehra bekar";
+
+const adimiAyir = adim.split(" "); // boşluğa kadar olan ifadeyi 1 eleman ondan sonrasını 1 eleman olacak şekilde böler
+console.log(adimiAyir);//  ['zehra', 'bekar']
+
+
+let  adimdakiHarfler = adim.split("");
+console.log(adimdakiHarfler);// ['z', 'e', 'h', 'r', 'a', ' ', 'b', 'e', 'k', 'a', 'r'] 
+
+adimdakiHarfler = [...adim]
+console.log(adimdakiHarfler);// ['z', 'e', 'h', 'r', 'a', ' ', 'b', 'e', 'k', 'a', 'r']
+/*
+JavaScript'deki spread operatörü, bir diziyi veya bir stringi elemanlarına ayırmak için kullanılabilir. Bu durumda, adimdakiHarfler adlı dizi, 
+adim string'inin her bir harfini içerecek şekilde oluşturuluyor. Yani, her bir karakter bir dizi elemanına dönüşüyor.*/
+
+// fonksiyonlar için örnek :
+function sayilariTopla(s1,s2){
+    console.log(s1+s2);
+};
+sayilariTopla(1,4);// 5
+
+// parametre sayısı çok olan ya da belli olmayan fonksiyonlar için :
+function sayilarinToplami(...parametreler){
+    let toplam = 0;
+    for (let s of parametreler){
+        toplam = toplam + s;
+    }
+    console.log(toplam);
+};
+sayilarinToplami(1,6,5,6);// 18
