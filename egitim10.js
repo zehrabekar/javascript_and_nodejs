@@ -166,3 +166,87 @@ function sayilarinToplami(...parametreler){
     console.log(toplam);
 };
 sayilarinToplami(1,6,5,6);// 18
+
+// bölüm sonu soruları
+//1-sehirler adında bir dizi oluştur. dizi elemanları sehirler ile ilgili bilgiler içerecek. bu bilgiler sehrin adı, plakası ve komşuları. dizi oluşturulduktan sonra sehir isimlerine göre z'den a'ya sıralanacak.
+//2-kullanıcıdan alınan değere kadar lan sayılar fibonacci dizisi şeklinde yazdırılacak. fibonaccide iki sayının toplamı bir sonraki sayıyı oluşturur. örnek 0 1 1 2 3 5 8...
+//3-ogrenciler dizisi oluştur. her bir nesnenin ad, soyad, id değerler olmalı. id numarası çift olanların adı ve soyadını birleştirilmiş halde tutan diziyi a'dan z'ye sıralı şekilde yazdr.bunları yaparken map, filter ve sort metotlarını kullan. işlem bitince kodları arrow function ve zincirleme haline dönüştür.
+
+//1-) :
+const sehirler = [
+    {ad : "sakarya", plaka: 54, komsular:["kocaeli","düzce","bolu"]},
+    {ad : "zonguldak", plaka: 67, komsular:["karabük","düzce","bartın"]},
+    {ad : "tekirdağ", plaka: 59, komsular:["edirne","kırklareli","istanbul"]},
+    {ad : "trabzon", plaka: 61, komsular:["giresun","rize","gümüşhane"]}
+];
+
+sehirler.sort(function(a,b){
+    if(a.ad < b.ad){
+        return 1;
+    }
+    else if (a.ad > b.ad){
+        return -1;
+    } else return 0;
+});
+console.log(sehirler);
+/*
+0: {ad: 'zonguldak', plaka: 67, komsular: Array(3)}
+1: {ad: 'trabzon', plaka: 61, komsular: Array(3)}
+2: {ad: 'tekirdağ', plaka: 59, komsular: Array(3)}
+3: {ad: 'sakarya', plaka: 54, komsular: Array(3)} */
+
+
+//2-) :
+function fibonacci(sayi){
+    let sonucDizi = [0,1];
+
+    for (let i=2; i<sayi ; i++){
+        const oanHesaplananEleman = sonucDizi[i-1] + sonucDizi [i-2];
+        if (oanHesaplananEleman < sayi) {
+            sonucDizi[i] = oanHesaplananEleman;
+        }else {
+            break;
+        }
+    }
+    return sonucDizi;
+};
+console.log(fibonacci(50));
+//[0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
+
+
+//3-) :
+const ogrenciler_ =[
+    {id : 1, ad : "zehra", soyad : "bekar"},
+    {id : 2, ad : "melike", soyad : "isbir"},
+    {id : 3, ad : "dilara", soyad : "aygün"},
+    {id : 4, ad : "ayşe", soyad : "sak"}
+];
+
+/*
+const ciftIdler = ogrenciler_.filter(function(ogrenci){
+    return ogrenci.id % 2 === 0;
+});
+console.log(ciftIdler);
+/*0: {id: 2, ad: 'melike', soyad: 'isbir'}
+1: {id: 4, ad: 'ayşe', soyad: 'sak'}*/
+/*
+const birlesikIsimler = ciftIdler.map(function(ogrenci){
+    return ogrenci.ad + " " + ogrenci.soyad;
+});
+console.log(birlesikIsimler);
+/*(2) ['melike isbir', 'ayşe sak']
+0: "melike isbir"
+1: "ayşe sak"*/
+/*
+birlesikIsimler.sort();
+
+console.log(birlesikIsimler);*/
+//['ayşe sak', 'melike isbir']
+
+// arrow function ve zincirleme şekilde yazımı :
+
+const sonuc = ogrenciler_.filter(ogrenci => ogrenci.id % 2 === 0)
+            .map(ogrenci => ogrenci.ad + " " + ogrenci.soyad)
+            .sort();
+console.log(sonuc);
+// ['ayşe sak', 'melike isbir']
