@@ -63,3 +63,46 @@ console.log(deger); // sayfadaki linkleri getirir
 
 console.clear();
 
+// tek element seçiciler
+//document.getElementById(); dökümana git idye göre elemanı getir
+console.log(document.getElementById("baslik")); // <h1 id="baslik" class="baslikSinif">DOM Kavramı</h1>
+
+console.log(document.getElementById("baslik").id); // baslik 
+
+console.log(document.getElementById("baslik").className); // baslikSinif
+
+const baslik = document.getElementById("baslik");
+console.log(baslik.id);// baslik
+
+// seçilen elemanın stilini değiştirme
+baslik.style.backgroundColor = "red"; // dom kavramı başlığının arka planı kırmızı oldu
+baslik.style.color = "white"; // dom kavramı yazısı beyaz oldu
+baslik.style.padding= "2rem"; // 4 taraftan 2rem'lik padding verildi
+
+// seçilen elemanın içeriğini değiştirme
+baslik.textContent = "yeni başlık"; // dom kavramı başlığı yerine yeni başlık isimli başlık yazıldı
+const test = baslik.textContent;
+console.log(test); // yeni baslik
+
+baslik.innerText = "daha yeni başlık"; // textContent ile işlevi aynıdır. yeni başlık başlığını değiştirdi ve daha yeni başlık başlığını atadı.
+baslik.innerHTML = '<img src="https://source.unsplash.com/100x100" alt="">';
+// başlık yerine fotoğraf koydu. baslik.innerText ile koymaya çalışsaydık başlık kısmında fotoğraf değil img etiketini yazacaktı.
+
+console.log(document.querySelector("h2")); // <h2>Document Object Model</h2>
+console.log(document.querySelector("#liste")); // <ul id="liste" class="liste">...</ul>
+console.log(document.querySelector(".liste-item")); //  <li class="liste-item">Sakarya</li> . liste-item classına ait ilk elemanı getirdi
+console.log(document.querySelector("ul li"));// <li class="liste-item">Sakarya</li> ul içindeki ilk li etiketini getirdi.
+console.log(document.querySelector(".link.link-google")); //<a class="link link-google" href="www.google.com">Google</a>
+
+console.clear();
+
+const myList = document.querySelector(".liste-item")
+console.log(myList);//<li class="liste-item">Sakarya</li>
+
+const myListe = document.querySelector("li"); 
+myListe.style.color = "blue"; // ilk li elemanını mavi yaptı
+document.querySelector("li:last-child").style.color = "yellow"; // son li elemanını sarı yaptı
+document.querySelector("li:nth-child(2)").style.color = "pink"; // 2. eleman pembe oldu
+document.querySelector("li:nth-child(3)").style.color = "purple"; // 3. eleman mor oldu
+document.querySelector("li:nth-child(odd)").style.color = "black"; // tek sıradaki ilk elemanı siyah yaptı
+document.querySelector("li:nth-child(even)").style.color = "orange"; // çift sıradaki ilk elemanı turuncu yaptı
