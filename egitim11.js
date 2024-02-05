@@ -56,7 +56,10 @@ console.log(deger); // text/html
 deger= document.links;
 console.log(deger); // sayfadaki linkleri getirir
 
-deger = document.links[1].className; // indexi 1 olan linkin class adını verir
-deger = document.images[0]; // resimlere ulaşır
-deger = document.images[0].src; // resmin adresine ulaşır   
-deger = document.images[0].getAttribute("src"); // resmin adresine ulaşır   
+//deger = document.links[1].className; // indexi 1 olan linkin class adını verir
+// deger = document.images[0];  resimlere ulaşır
+// deger = document.images[0].src;  resmin adresine ulaşır   
+// deger = document.images[0].getAttribute("src");  resmin adresine ulaşır  
+
+console.clear();
+
