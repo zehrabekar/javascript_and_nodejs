@@ -94,8 +94,6 @@ console.log(document.querySelector(".liste-item")); //  <li class="liste-item">S
 console.log(document.querySelector("ul li"));// <li class="liste-item">Sakarya</li> ul içindeki ilk li etiketini getirdi.
 console.log(document.querySelector(".link.link-google")); //<a class="link link-google" href="www.google.com">Google</a>
 
-console.clear();
-
 const myList = document.querySelector(".liste-item")
 console.log(myList);//<li class="liste-item">Sakarya</li>
 
@@ -106,3 +104,41 @@ document.querySelector("li:nth-child(2)").style.color = "pink"; // 2. eleman pem
 document.querySelector("li:nth-child(3)").style.color = "purple"; // 3. eleman mor oldu
 document.querySelector("li:nth-child(odd)").style.color = "black"; // tek sıradaki ilk elemanı siyah yaptı
 document.querySelector("li:nth-child(even)").style.color = "orange"; // çift sıradaki ilk elemanı turuncu yaptı
+
+console.clear();
+
+//çoklu eleman seçiciler
+const linkler = document.getElementsByClassName("link"); // birden fazla elemanı sınıf adına göre çağırır
+console.log(linkler);
+// HTMLCollection(3) [a.link.link-google, a.link.link-facebook, a.link.link-instagram]
+// elemanlara tek tek ulaşmak için:
+console.log(linkler[1]); // <a class="link link-facebook" href="www.facebook.com">Facebook</a>
+
+linkler[0].style.color = "red"; // google linki kırmızı oldu
+linkler[1].style.backgroundColor = "pink"; // facebook arkaplan rengi pembe oldu
+linkler[2].textContent = "instagram linki"; // "instagram" yazılı link instagram linki" olarak değiştirildi
+
+console.log(document.getElementsByClassName("liste-item")); // HTMLCollection(5) [li.liste-item, li.liste-item, li.liste-item, li.liste-item, div.liste-item]
+
+//sadee ul içindeki liste-item classına sahip elemanları getirmek için :
+console.log(document.querySelector("ul").getElementsByClassName("liste-item"));
+// HTMLCollection(4) [li.liste-item, li.liste-item, li.liste-item, li.liste-item]
+
+const listeElemanlarim = document.getElementsByTagName("li"); // li etiketlerini getir
+console.log(listeElemanlarim);// HTMLCollection(4) [li.liste-item, li.liste-item, li.liste-item, li.liste-item]
+
+const linkListe = document.querySelectorAll("a"); 
+console.log(linkListe); // NodeList(3) [a.link.link-google, a.link.link-facebook, a.link.link-instagram]
+
+const sehirlerTek = document.querySelectorAll("li:nth-child(odd)");
+const sehirlerCift = document.querySelectorAll("li:nth-child(even)");
+
+sehirlerTek.forEach(item => {
+    item.style.backgroundColor = "pink";
+});
+
+sehirlerCift.forEach(item => {
+    item.style.backgroundColor = "#96de6d";
+});
+
+// querySelector kullandığımızda dizi metotlarını direkt kullanabiliriz. örnek olarak sehirlerTek'i array.from() ile diziye çevirmemize gerek yok
