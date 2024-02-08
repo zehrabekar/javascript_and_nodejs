@@ -142,3 +142,59 @@ sehirlerCift.forEach(item => {
 });
 
 // querySelector kullandığımızda dizi metotlarını direkt kullanabiliriz. örnek olarak sehirlerTek'i array.from() ile diziye çevirmemize gerek yok
+
+console.clear();
+
+// DOM elemanlar arası gezinti :
+
+const myliste = document.querySelector("ul.liste"); // sınıf adı liste olan ul etiketini seçti
+console.log(myliste); // <ul id="liste" class="liste">...</ul>
+
+let deger_ ;
+deger_ = myliste.childNodes;
+console.log(deger_);
+//NodeList(9) [text, li.liste-item, text, li.liste-item, text, li.liste-item, text, li.liste-item, text]
+//childNodes, bir DOM düğümünün doğrudan alt düğümlerine erişim sağlayan bir özelliktir. 
+//childNodes özelliği, elemanın tüm çocuk düğümlerini içerir, bu nedenle boşluklar, satır sonları ve yorumlar gibi metin olmayan öğeleri de içerebilir. 
+// bu yüzden yukarıda satır sonları boşluklar vs ile 9 elemanlı çıktı verdi, normalde 4 şehir ismi yani elemanı var.
+
+deger_ = myliste.childNodes[1].nodeName;// LI
+deger_=myliste.childNodes[1].nodeType; // 1 (element)
+deger_=myliste.childNodes[0].nodeType; // 3 (text)
+console.log(deger_);
+// ul içine yorum satırı ekliyorum
+deger_=myliste.childNodes[1].nodeType; // 8 (yorumlar)
+
+deger_ = myliste.firstChild; // #text
+deger_ = myliste.firstElementChild; //<li class="liste-item">Sakarya</li>
+
+deger_ = myliste.lastChild; // #text
+deger_ = myliste.lastElementChild; //<li class="liste-item">Zonguldak</li>
+
+deger_ = myliste.childElementCount; // 4 (listenin içinde 4 tane li var)
+
+console.log(deger_);
+
+// parent element
+
+deger_= myliste.parentNode;// body (ul body'nin içinde)
+deger_= myliste.parentElement.parentElement;// html (ul'nin parent elementi body, body'nin parent elementi html)
+console.log(deger_);
+
+const myInput = document.querySelector("input");
+console.log(myInput.parentElement); // <form id="formID" action="">...</form>
+console.log(myInput.parentElement.parentElement); // body
+
+//komşuları bulmak için :
+deger_ = document.querySelector("li");// ilk sıradaki li'yi verdi
+
+// ikinci sıradaki li'ye ulaşmak için
+deger_ = document.querySelector("li").nextElementSibling; // izmit
+
+deger_ = document.querySelector("li").nextElementSibling.nextElementSibling; // düzce
+
+deger_ = document.querySelector("li").nextElementSibling.nextElementSibling.previousElementSibling; // izmit
+
+//previousElementSibling ile sakaryadan geriye gidemeyiz, null sonucunu verir. çünkü aynı düzeyde sakaryadan önce bir eleman yok.
+
+console.log(deger_); 
