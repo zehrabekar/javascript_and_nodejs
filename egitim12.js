@@ -45,3 +45,27 @@ console.log(listeItem);
 // input alanını değişkene atayarak silme :
 const inputAlani = document.querySelector("input");
 document.querySelector("form").remove(inputAlani);
+
+
+
+
+
+
+
+
+let renkler = ["kırmızı","yeşil"];
+let yeniRenkler = renkler;
+
+console.log(renkler, yeniRenkler); // (2) ['kırmızı', 'yeşil'] (2) ['kırmızı', 'yeşil']
+
+renkler.push("mavi");
+
+console.log(renkler, yeniRenkler); //  ['kırmızı', 'yeşil', 'mavi'] (3) ['kırmızı', 'yeşil', 'mavi']
+// burada yeniRenkler dizisi renkler dizisindeki değerleri değil bu değerlerin bellekte bulunduğu adresi tuttuğu için yapılan değişiklikten etkilenir.
+
+renkler = ["kırmızı","pembe"];
+renkler.push("sarı");
+console.log(renkler, yeniRenkler);
+// ['kırmızı', 'pembe', 'sarı'] (3) ['kırmızı', 'yeşil', 'mavi']
+//burada renkler = dedikten sonra yeni bir atama işlemi yaptığımızda renklerin tuttuğu adres değişir fakat yeniRenkler hala eski adresi tutmaya devam eder.
+

@@ -376,21 +376,22 @@ console.log(ismim, yeniIsmim);
 //çıktı : zehraa zehra
 
 //referans tipli array object
-let renkler = ["mavi","yeşil"]
-let yeniRenkler = renkler
+let renkler = ["kırmızı","yeşil"];
+let yeniRenkler = renkler;
 
-renkler = ["sarı","yeşil"]
-renkler.push("mor")
+console.log(renkler, yeniRenkler); // (2) ['kırmızı', 'yeşil'] (2) ['kırmızı', 'yeşil']
 
-// renkler = ["sarı","yeşil"] bu tanımdan sonra yeni bir adres oluşur ve yeniRenkler ilk renklerin değerini alır ve ikinci renklerin içeriğinden etkilenmez . içerik olarak ilk renklerle aynı bile olsaydı yinede adres yeni adres olacaktı
+renkler.push("mavi");
 
+console.log(renkler, yeniRenkler); //  ['kırmızı', 'yeşil', 'mavi'] (3) ['kırmızı', 'yeşil', 'mavi']
+// burada yeniRenkler dizisi renkler dizisindeki değerleri değil bu değerlerin bellekte bulunduğu adresi tuttuğu için yapılan değişiklikten etkilenir.
+
+renkler = ["kırmızı","pembe"];
+renkler.push("sarı");
 console.log(renkler, yeniRenkler);
-//çıktı : (3) ['mavi', 'yeşil', 'mor'] (3) ['mavi', 'yeşil', 'mor']
-// primitive tiplerde olduğu gibi yeniRenkler renklerin ilk hali gibi kalmadı ve sonradan eklenen mor değeride yeniRenklerde görüldü
-/*
-referans tipler çalışma mantığı : renkler değişken adı mavi yeşil mor değerlerini değil o yapının adresini tutar.
-yeniRenkler = renkler demek yeniRenkler renklerin tuttuğu adresi tutuyor demektir
-renklere yeni bir değer eklesek bile (içerik değişti ) adres değişmediği için ikiside aynı adrese gider ve aynı içeriği gösterir */ 
+// ['kırmızı', 'pembe', 'sarı'] (3) ['kırmızı', 'yeşil', 'mavi']
+//burada renkler = dedikten sonra yeni bir atama işlemi yaptığımızda renklerin tuttuğu adres değişir fakat yeniRenkler hala eski adresi tutmaya devam eder.
+
 
 let ogrenci={
     ad : 'zehra',
