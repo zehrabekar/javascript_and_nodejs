@@ -392,7 +392,6 @@ console.log(renkler, yeniRenkler);
 // ['kırmızı', 'pembe', 'sarı'] (3) ['kırmızı', 'yeşil', 'mavi']
 //burada renkler = dedikten sonra yeni bir atama işlemi yaptığımızda renklerin tuttuğu adres değişir fakat yeniRenkler hala eski adresi tutmaya devam eder.
 
-
 let ogrenci={
     ad : 'zehra',
     yas : 22
