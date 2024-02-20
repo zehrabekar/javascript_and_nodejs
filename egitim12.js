@@ -45,10 +45,3 @@ console.log(listeItem);
 // input alanını değişkene atayarak silme :
 const inputAlani = document.querySelector("input");
 document.querySelector("form").remove(inputAlani);
-
-console.clear();
-
-// Event kavramı ve mouse eventleri
-/* event : JavaScript'te bir olay (event), bir web sayfasında gerçekleşen herhangi bir etkinliği temsil eder.
-Kullanıcı bir düğmeye tıkladığında, fareyi hareket ettirdiğinde, bir form gönderildiğinde veya sayfa yüklendiğinde gibi birçok etkinlik bir 
-JavaScript olayı olabilir.*/
