@@ -59,3 +59,17 @@ Daha sonra, eğer bu düğüm bir başka öğenin içinde ise, olay üst öğele
     });
 
 //ekranda görünen tıkla butonuna tıkladığımda consoleda sırasıyla Button'a tıklandı Inner Div'e tıklandı  Outer Div'e tıklandı yazdı.
+
+// event delegation : Olay işleyicisinin öğenin üst öğesine eklenmesi ve olayın bu üst öğe üzerinde işlenmesidir.
+
+    document.getElementById('liste').addEventListener('click', function(event) {
+        // Tıklanan öğenin etiket adını ve metnini konsola yazdıralım
+        if (event.target.tagName === 'LI') {
+            console.log('Tıklanan öğe:', event.target.tagName);
+            console.log('İçerik:', event.target.textContent);
+        }
+    });
+// örnek olarak ekrandaki 3. öüee tıkladığımda Tıklanan öğe: LI İçerik: Öğe 3 çıktısını aldım.
+/* buradaki olay her liste öğesi için ayrı ayrı tıklama işleyicisi eklemek yerine, listeyi içeren ana öğeye bir tıklama işleyicisi ekliyoruz.
+daha sonra event.target.tagName ve event.target.textContent kullanarak tıkladığımız etiketi ve ve içeriğine ulaşıyoruz.
+Bu yaklaşım, özellikle çok sayıda öğenin dinamik olarak eklendiği durumlarda kodun daha temiz ve daha az tekrar eden olmasını sağlar.*/
