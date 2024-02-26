@@ -5,92 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DOM Kavramı</title>
-    <style>
-      .container{
-        width: 400px;
-        height: 200px;
-        background-color: teal;
-        padding: 2rem 2rem;
-        font-size: 2rem;
-        color: white;
-      }
-
-      .link, .link:visited{
-        text-decoration: none;
-        color: white;
-      
-      font-weight: bold;
-      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-      }
-
-      .link:hover{
-        color: #333;
-      }
-
-      .yazi{
-        font-size: 2rem;
-      } 
-
-      .outer {
-        margin-top: 60px;
-        padding: 20px;
-        background-color: lightblue;
-    }
-    .inner {
-        padding: 20px;
-        background-color: lightcoral;
-    }
-    .button {
-        padding: 10px;
-        background-color: lightgreen;
-    }
-
-    ul {
-        list-style-type: none;
-        padding: 0;
-    }
-    li {
-        padding: 10px;
-        margin: 5px;
-        background-color: lightblue;
-        cursor: pointer;
-    }
-    </style>
   </head>
 
-  <body>
-    <div class="container">
-      <form action="#" id="form">
-        <input id ="ad" type="text" placeholder="adınız">
-        <select name="sehir" id="sehir">
-          <option value="1">sakarya</option>
-          <option value="2">istanbul</option>
-        </select>
-        <button type="button">normal button</button>
-        <button type="reset">temizle</button>
-        <button type="submit">gönder</button>
-      </form>
-      <a href="https://www.google.com.tr/?hl=tr" target="_blank" class="link"> Google</a>
-      <p class="yazi">Merhaba</p>
+<body>
 
-      <!-- event bubbling -->
-      <div class="outer">
-        <div class="inner">
-            <button class="button">Tıkla</button>
-        </div>
-    </div> 
-
-    <!-- event delegation -->
-
-<ul id="liste">
-  <li>Öğe 1</li>
-  <li>Öğe 2</li>
-  <li>Öğe 3</li>
-  <li>Öğe 4</li>
-  <li>Öğe 5</li>
-</ul>
-
-    </div>
-    <script src="egitim14.js"></script>
+  <form action="#" id="form">
+    <input type="text" name="isim" id="isim" class="isim" placeholder="İsim">
+    <button type="submit">Kaydet</button>
+  </form>
+  <div id="output"></div>
+  
+    <script src="egitim15.js"></script>
   </body>
 </html>
