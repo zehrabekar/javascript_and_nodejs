@@ -36,3 +36,26 @@ const isim = document.querySelector("#ad"); // console.log(isim.value); ile form
 const sehirler = document.querySelector("#sehir");
 sehirler.addEventListener("change", eventiYakala);
 //consoleda event adı: change ve seçilen şehrin value geldi mesela sakarya için 1
+
+// event bubbling : bir olayın bir öğede başlamasına ve daha sonra o öğeden üst öğelere doğru yayılmasına dayanan bir olay işleme modelidir.
+/*Örneğin, bir düğmeye tıkladığınızda, bu tıklama olayı önce tıkladığınız butonda yakalanır. 
+Daha sonra, eğer bu düğüm bir başka öğenin içinde ise, olay üst öğelere doğru yükseltilir.
+ Örneğin, düğme bir div içindeyse, önce buton sonra div sonra body işlenir.
+*/
+
+// Outer div üzerine tıklama işleyicisi
+    document.querySelector('.outer').addEventListener('click', function() {
+        console.log('Outer Div\'e tıklandı');
+    });
+
+    // Inner div üzerine tıklama işleyicisi
+    document.querySelector('.inner').addEventListener('click', function() {
+        console.log('Inner Div\'e tıklandı');
+    });
+
+    // Button üzerine tıklama işleyicisi
+    document.querySelector('.button').addEventListener('click', function() {
+        console.log('Button\'a tıklandı');
+    });
+
+//ekranda görünen tıkla butonuna tıkladığımda consoleda sırasıyla Button'a tıklandı Inner Div'e tıklandı  Outer Div'e tıklandı yazdı.

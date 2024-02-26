@@ -30,12 +30,26 @@
       .yazi{
         font-size: 2rem;
       } 
+
+      .outer {
+        margin-top: 60px;
+        padding: 20px;
+        background-color: lightblue;
+    }
+    .inner {
+        padding: 20px;
+        background-color: lightcoral;
+    }
+    .button {
+        padding: 10px;
+        background-color: lightgreen;
+    }
     </style>
   </head>
 
   <body>
     <div class="container">
-      <form action="#" method="post" id="form">
+      <form action="#" id="form">
         <input id ="ad" type="text" placeholder="adınız">
         <select name="sehir" id="sehir">
           <option value="1">sakarya</option>
@@ -47,6 +61,14 @@
       </form>
       <a href="https://www.google.com.tr/?hl=tr" target="_blank" class="link"> Google</a>
       <p class="yazi">Merhaba</p>
+
+      <!-- event bubbling -->
+      <div class="outer">
+        <div class="inner">
+            <button class="button">Tıkla</button>
+        </div>
+    </div> 
+
     </div>
     <script src="egitim14.js"></script>
   </body>
