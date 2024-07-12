@@ -40,3 +40,10 @@ document.querySelector("#form").addEventListener("submit", function(e){
 });
 
 // aynı örneği session storage ile yaparsak tarayıcı kapatılıp tekrar açıldığında bilgiler silinmiş olacaktı.
+
+let items = document.querySelectorAll("li");
+
+items.forEach(function(item, index) {
+    item.style.color = "blue";
+    console.log(`Item ${index + 1}: ${item.innerText}`);
+});
