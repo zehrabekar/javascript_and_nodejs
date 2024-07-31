@@ -81,27 +81,3 @@ elementSecim.forEach(function(elementler){
 // en son 2. ve 4. elementleri seçmiştik. daha sonra bu elementler üzerinde forEach metodu ile değişiklikler yaptık
 
 console.log(elementSecim);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
