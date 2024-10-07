@@ -35,6 +35,7 @@ console.log(n1,n2,n3); // 10 30 50
 const getLangs = () => ["Python","Java","C++"];
 
 const [lang1,lang2,lang3] = getLangs();
+// getLangs fonksiyonu bir dizi döndürdüğü için, bu dizinin elemanlarını doğrudan değişkenlere atamak için köşeli parantez kullandık.
 
 console.log(lang1,lang2,lang3); //Python Java C++
 
@@ -48,5 +49,6 @@ const person = {
 
 const {name:isim, year:yil,salary:maas,showInfos:bilgileriGoster} = person;
 //  örnek : name değişkenini isim olarak adlandırarak kullandık.
+//person bir obje olduğu için süslü parantez kullandık
 
 console.log(isim,yil,maas,bilgileriGoster); // ayşe 1990 1000 () => console.log("bilgier gösteriliyor...")
